@@ -1,0 +1,164 @@
+% !TeX root = Microwave.tex
+\chapter{Microwave Elements and Networks 微波元件与网络分析}
+\section{S参数的引入}
+\begin{equation*}
+    \begin{array}{cc}
+        \makecell[cc]{\mbox{A参数}\begin{cases}
+            \mbox{只适用于双端口(分组)}\\
+            \mbox{适用于传输问题讨论}\\
+            \mbox{端口量是电压和电流}\\
+        \end{cases}}&
+        \makecell[cc]{\mbox{S参数}\begin{cases}
+            \mbox{多端口}\\
+            \mbox{任意输入输出}\\
+            \mbox{波参数直观反映入射和反射}
+        \end{cases}}
+    \end{array}
+\end{equation*}
+
+    \subsection{入射波和反射波}
+    由传输线理论的本征模思想，电压电流的波动方程可以视作入射波和反射波的叠加，即\hyperref[Equ: Eigenmode u(z) and i(z)]{式(\ref*{Equ: Eigenmode u(z) and i(z)})}的形式。反过来，则可以用叠加后的电压电流表示入射波和反射波：
+    \begin{subequations}
+        \begin{numcases}{}
+            \mbox{入射波：}u^+\mathrm{e}^{-\gamma z}=\frac{1}{2}(u+iZ_0) \\
+            \mbox{反射波：}u^-\mathrm{e}^{\gamma z}=\frac{1}{2}(u-iZ_0)
+        \end{numcases}
+    \end{subequations}
+
+    作量纲归一化处理：
+    \begin{subequations}
+        \begin{numcases}{}
+            \mbox{入射波$a$：}a=\frac{u^+\mathrm{e}^{-\gamma z}}{\sqrt{Z_0}}
+                =\frac{1}{2}\left(\frac{u}{\sqrt{Z_0}}+i\sqrt{Z_0}\right)
+                =\frac{1}{2}(\bar{u}+\bar{i}) \\
+            \mbox{散射波$b$：}b=\frac{u^-\mathrm{e}^{\gamma z}}{\sqrt{Z_0}}
+                \;=\frac{1}{2}\left(\frac{u}{\sqrt{Z_0}}-i\sqrt{Z_0}\right)
+                =\frac{1}{2}(\bar{u}-\bar{i})
+        \end{numcases}
+    \end{subequations}
+    归一化后，用$a,b$表示功率时式中不含有$Z_0$。
+
+
+    称其中
+    \begin{subequations}
+        \begin{numcases}{}
+            \mbox{归一化电压：} \bar{u}=\frac{u}{\sqrt{Z_0}}=a+b\\
+            \mbox{归一化电流：} \bar{i}=i\sqrt{Z_0}=a-b
+        \end{numcases}
+    \end{subequations}
+
+    传输功率
+    \begin{equation}
+        \begin{aligned}
+            p&=\frac{1}{2}\Re[\bar{u}\bar{i}^*]\\
+            &=\frac{1}{2}\Re[(a+b)(a^*-b^*)]\\
+            &=\frac{1}{2}(aa^*-bb^*)+\frac{1}{2}\Re[a^*b-ab^*]\\
+            &=\frac{1}{2}(aa^*-bb^*)
+        \end{aligned}
+    \end{equation}
+    其中$\frac{1}{2}aa^*$和$\frac{1}{2}bb^*$恰好对应入射功率和散射功率。
+
+    \subsection{S参数的定义和物理意义}
+    设有$n$端口网络，每个端口均有输入量和输出量，分别用前面所定义的入射波$a$和散射波$b$表示。则$\bm{S}$散射参数$S_{i1},\cdots,S_{in}$定义了每一个散射波$b_i$如何由各个入射波$a_1,\cdots,a_n$加权线性组合得到。
+    \begin{equation}
+        \begin{bmatrix}
+            b_1\\b_2\\\vdots\\b_n
+        \end{bmatrix}
+        =\begin{bmatrix}
+            S_{11}&S_{12}&\cdots&S_{1n}\\
+            S_{21}&S_{22}&\cdots&S_{2n}\\
+            \vdots&\vdots&\vdots&\vdots\\
+            S_{n1}&S_{n2}&\cdots&S_{nn}
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_1\\a_2\\\vdots\\a_n
+        \end{bmatrix}
+    \end{equation}
+
+
+    \subsection{网络性质的S参数描述}
+        \begin{enumerate}
+            \item 对称性质
+            \begin{equation}
+                S_{ii}=S_{jj}\quad\mbox{（$i$端口与$j$端口对称）}
+            \end{equation}
+            \item 无耗性质\footnote{$[\,\cdot\,]^\dagger$为Hermite符号，表示矩阵的共轭转置或转置共轭。}
+            \begin{equation}
+                \bm{S}^\dagger\bm{S}=\bm{I}
+            \end{equation}
+            此性质又称为$\bm{S}$参数矩阵的幺正性。
+
+
+            特殊地，当网络为二端口网络时，代入可得：
+            \begin{equation}
+                \begin{bmatrix}
+                    S_{11}^*&S_{21}^*\\
+                    S_{12}^*&S_{22}^*
+                \end{bmatrix}
+                \begin{bmatrix}
+                    S_{11}&S_{12}\\
+                    S_{21}&S_{22}
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    1&0\\
+                    0&1
+                \end{bmatrix}
+            \end{equation}
+            上式等价于
+            \begin{equation}
+                \left\{\begin{aligned}
+                    &\begin{subequations}
+                        \mbox{振幅条件}
+                        \left\{\begin{aligned}
+                            |S_{11}|^2+|S_{12}|^2=1 \\
+                            |S_{21}|^2+|S_{22}|^2=1
+                        \end{aligned}\right.
+                    \end{subequations}\\
+                    &\begin{subequations}
+                        \mbox{相位条件}
+                        \left\{\begin{aligned}
+                            S_{11}^*S_{12}+S_{21}^*S_{22}\\
+                            S_{11}S_{12}^*+S_{21}S_{22}^*
+                        \end{aligned}\right.
+                    \end{subequations}
+                \end{aligned}\right.
+            \end{equation}
+            这是一个欠定方程组，可以推知：
+            \begin{subequations}
+                \begin{numcases}{\mbox{}}
+                    |S_{11}|=|S_{22}| \\
+                    |S_{12}|=|S_{21}| \\
+                    (\varphi_{12}+\varphi_{21})-(\varphi_{11}+\varphi_{22})=\pm\pi
+                \end{numcases}
+            \end{subequations}
+            \item 互易性质
+            \begin{equation}
+                S_{ij}=S_{ji}\quad\mbox{（$i$端口与$j$端口互易）}
+            \end{equation}
+            \item 反射系数转换性质
+            \begin{equation}
+                \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}
+            \end{equation}
+            其中，$\varGamma_L=\frac{a_2}{b_2}$为负载反射系数
+        \end{enumerate}
+
+
+\section{S参数的变换定理}
+    \subsection{负载变换}
+    \subsection{A参数矩阵转化为S参数矩阵}
+    % \paragraph{}
+    
+    归一化后的$\bm{A}$参数矩阵转$\bm{S}$参数矩阵:
+    \begin{equation}
+        \bm{S}=\frac{1}{A_{11}+A_{12}+A_{21}+A_{22}}
+        \begin{bmatrix}
+            A_{11}+A_{12}-A_{21}-A_{22}&2|\bm{A}|\\
+            2&A_{12}+A_{22}-A_{21}-A_{11}
+        \end{bmatrix}
+    \end{equation}
+
+\section{单端口元件}
+    \subsection{匹配元件}
+    \subsection{短路元件}
+    \subsection{失配元件}
+

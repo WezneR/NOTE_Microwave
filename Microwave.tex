@@ -1,0 +1,212 @@
+\documentclass[11pt,oneside,AutoFakeBold,AutoFakeSlant]{ctexbook}
+
+%%%%%%%%%%%%% Geometry
+\usepackage[a4paper,left=2.5cm,right=2.5cm, bottom=2.5cm,top=2.5cm]{geometry}
+
+%%%%%%%%%%%%%%% Les paquets
+
+% \usepackage[zh]{babel}
+\usepackage[palette=munch]{nexus}
+
+%%%%%%%%%%%%%%%% hyperref
+\usepackage[verbose]{hyperref}
+\hypersetup{
+    hidelinks
+}
+\setlength{\XeTeXLinkMargin}{-1pt}
+
+\usepackage{xeCJK} %中日韩文字xeCJK宏包
+\usepackage{indentfirst} %设置段首缩进的宏包
+
+% \setCJKmainfont{苹方 常规} %设置 CJK 主字体为 PingFang Regular （苹方）
+% \setlength{\parindent}{2\ccwd}  %\parindent表示段首缩进的长度，设置为两个大写字母M的长度
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}%提供了更特殊的符号如\varpropto
+\usepackage{mathrsfs} %提供了\mathscr
+\usepackage{cases}%提供了numcases
+\usepackage{subeqnarray}%提供了subequations环境
+% \usepackage{eufrak}%提供了mathfrak
+\usepackage{siunitx}
+\usepackage{extarrows}%提供了\xlongequal
+\usepackage{bm}%提供了数学粗体
+\usepackage{ulem}%提供了\uline{加下划线}而\uwave{加波浪线}则是在文本下面加上波浪线。\sout{中间加横线}
+\usepackage{boxedminipage2e}% 提供了boxedminipage ==========太丑，已被tcb取代
+\usepackage{booktabs}
+\usepackage{caption}
+
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{bending}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{matrix}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{quotes} % 提供了 \node ["label content" {color= ,above}]
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections} % 提供了 \path [name intersections={of= ,by= }]
+\usetikzlibrary{through} % 提供了\node (E) [name path=E,draw,circle through=(A),label=right:$E$] at (B) {};
+\usetikzlibrary{graphs}
+\usetikzlibrary{pgfplots.smithchart}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+
+\definecolor{tcb_main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{tcb_sub}{HTML}{cde4ff}     % setting sub color to be used
+\definecolor{tcbproof_main}{rgb}{0.16, 0.28, 0.39}     % setting sub color to be used
+
+\newtcbtheorem{question}{题~(理}
+    {enhanced,
+     breakable,
+     colback = white,
+     colframe = cyan,
+     colbacktitle = cyan,
+     fonttitle = \sffamily\bfseries,
+     attach boxed title to top left = {yshift = -2mm, xshift = 5mm},
+     boxed title style = {sharp corners},
+     separator sign = {).~}
+    }{qst}
+
+\newtcbtheorem[number within=chapter]{definition}{定义}
+    {fonttitle=\bfseries\upshape,
+     fontupper=\slshape,
+     colback=red!5!white,
+     colframe=red!75!black!70!yellow,
+     arc=0mm,
+    }{def}
+\newtcbtheorem[number within=chapter]{theorem}{定理}
+    {fonttitle=\bfseries\upshape,
+     fontupper=\slshape,
+     colback=blue!5!white,
+     colframe=tcb_main,
+     arc=0mm,
+    }{theo}
+\newtcbtheorem[number within=chapter]{corollary}{推论}
+    {fonttitle=\bfseries\upshape,
+     fontupper=\slshape,
+     colback=blue!5!white,
+     colframe=tcb_main,
+     arc=0mm,
+    }{coro}
+\newtcbtheorem[number within=chapter]{lemma}{引理}
+    {fonttitle=\bfseries\upshape,
+     fontupper=\slshape,
+     colback=blue!5!white,
+     colframe=gray!60!blue,
+     arc=0mm,
+    }{lemm}
+
+\newtcolorbox{tcbproof}% 证明主题样式
+    {
+    sharp corners,
+    colback = tcbproof_main!5!white,
+    colframe = tcbproof_main,
+    boxrule = 0pt,
+    leftrule = 5pt % left rule weight
+    }
+\newtcolorbox{tcbdef}[1]% 样式与定义主题相同，但不作为定义环境
+    {
+    title=#1,
+    fonttitle=\bfseries\upshape,
+    fontupper=\slshape,
+    colback=red!5!white,
+    colframe=red!75!black!70!yellow,
+    arc=0mm,
+    }
+\newtcolorbox{tcbnote}% 注释主题样式
+    {
+    title=\hbox{\tikz[baseline=-3.8pt]\node[circle,fill=white,inner sep=.2pt]{\color{orange} \textbf{!}}; 注意},
+    fonttitle=\bfseries\upshape,
+    fontupper=\slshape,
+    colback=orange!10!white!95!yellow,
+    colframe=orange!89!gray!85!yellow,
+    arc=0mm,
+    }
+
+
+% %新定义定理环境 ============= 已被tcb替代：正则表达式：
+                                                % \\begin\{definition\}\[(.*)\]
+                                                % \begin{definition}{$1}{$1}
+% % \theoremstyle{normal}
+% %\theoremstyle{Thm}
+% % \newtheorem{Theorem}[FA]{定理}
+% % \newtheorem{Theoremn}{定理}
+% \newtheorem{theorem}{定理}[section]
+% \newtheorem{corollary}{推论}[section]
+% % \newtheorem{Lemma}[FA]{引理}
+% % \newtheorem{Lemma}{引理}
+% \newtheorem{lemma}[theorem]{引理}
+% % \newtheorem*{Proof}{证明}
+% % \newtheorem*{Proof}{证明}[section]
+% \newtheorem{remark}{注}
+% \newtheorem*{solution}{解}
+% % \newtheorem{Definition}[FA]{定义}
+% \newtheorem{definition}{定义}
+% % \renewcommand{\theDefinitionn}{\thefA$'$}
+% % \newtheorem{Corollary}[FA]{推论}
+% \newtheorem{example}{例}
+% \newtheorem{proposition}{命题}
+
+
+
+
+%%=====================================自定义函数===================================
+% 设置罗马数字
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\renewcommand{\Re}{\operatorname{Re}} % Fraktur 体的字母“R”和“I”，改为国标要求使用罗马体的“Re”和“Im”，
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%定义一个给数字画外圈的函数
+    circle (.5em) node {\makebox[1em][c]{\small #1}};}}
+
+% % Commands for Highlighting text -- non tikz method
+\newcommand{\highlight}[2]{\colorbox{#1!17}{$\displaystyle #2$}}
+\renewcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
+
+%%======================================图表选项=====================================
+\counterwithin{figure}{section}
+
+
+
+
+%%======================================章节选项=====================================
+
+
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+
+\include{01_Transmission_Line}
+
+\include{02_Wave_Guide}
+
+\include{03_uWave_Net_Analysis}
+
+\include{04_uWave_Elements}
+
+\include{05_Fundamental_of_EMW}
+
+\include{06_Elec_Param_of_Antennas}
+
+\include{07_eg_of_Common_Antennas}
+
+%%%%%%
+\begin{appendices}
+    \include{Appendix_A}
+    \include{Appendix_B}
+\end{appendices}
+
+\end{document}

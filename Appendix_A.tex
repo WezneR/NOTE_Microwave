@@ -1,0 +1,114 @@
+% !TeX root = Microwave.tex
+\chapter{引用}
+\section{省略的证明过程}
+\begin{enumerate}
+    \renewcommand*\labelenumi{\circled{\theenumi}}
+    \item 函数是从数到数的映射。
+    \item 泛函是从函数到数的映射。
+    \item 算子是从函数到函数的映射。
+\end{enumerate}
+\section{坐标系}
+    \subsection{广义正交坐标系}
+    
+    与直角坐标系不同，正交曲线坐标系的单位基向量$\hat{e}_i$通常不是常矢量。它们模始终为1，但方向可能随空间中一点位置不同而变化。
+
+    \begin{definition}{正交曲线坐标系}{正交曲线坐标系}
+        三个有序数$(u_1,u_2,u_3)$，满足
+        \begin{enumerate}
+            \renewcommand*\labelenumi{(\theenumi)}
+            \item $u_i=u_i(x,y,z)$是直角坐标$(x,y,z)$的单值函数；
+            \item $\hat{e}_1,\hat{e}_2,\hat{e}_3$是曲线$u_1,u_2,u_3$的切线上指向$u_1,u_2,u_3$增大一方的单位矢量，它们两两正交，且满足右手螺旋关系：
+            \begin{equation*}
+                \hat{e}_1\times \hat{e}_2=\hat{e}_3\,,\;
+                \hat{e}_2\times \hat{e}_3=\hat{e}_1\,,\;
+                \hat{e}_3\times \hat{e}_1=\hat{e}_2
+            \end{equation*}
+        \end{enumerate}
+        则称$(u_1,u_2,u_3)$构成的坐标系为正交曲线坐标系。
+    \end{definition}
+
+
+
+    正交坐标系使用曲线坐标$(u_1,u_2,u_3)$，局部单位基向量为$\hat{e}_1,\hat{e}_2,\hat{e}_3$，$h_i,\,i=1,2,3$为对应的拉梅(\emph{Lame})系数。$\varPhi$为标量，矢量$\vec{A}=(A_1,A_2,A_3)$则：
+    \begin{subequations}
+        \begin{align}
+            \nabla \varPhi&=\frac{1}{h_1}\frac{\partial \varPhi}{\partial u_1}\hat{e}_1+\frac{1}{h_2}\frac{\partial \varPhi}{\partial u_2}\hat{e}_2+\frac{1}{h_3}\frac{\partial \varPhi}{\partial u_3}\hat{e}_3\\
+            \nabla\cdot\vec{A}&=\frac{1}{h_1h_2h_3}\left[\frac{\partial }{\partial u_1}(h_2h_3A_1)+\frac{\partial }{\partial u_2}(h_1h_3A_2)+\frac{\partial }{\partial u_3}(h_1h_2A_3)\right]\\
+            \nabla\times\vec{A}&=\frac{1}{h_1h_2h_3}\begin{vmatrix}
+            h_1\hat{e}_1&h_2\hat{e}_2&h_3 \hat{e}_3\\
+            \frac{\partial }{\partial u_1}&\frac{\partial }{\partial u_2}&\frac{\partial }{\partial u_3}\\
+            h_1A_1&h_2A_2&h_3 A_3
+        \end{vmatrix}
+        \end{align}
+    \end{subequations}
+
+    \subsection{\emph{Lame}系数}
+    \paragraph{如何求拉梅系数？}
+    “拉梅系数是坐标曲线的一组特殊切向量的模。”
+    \begin{equation}
+        h_i=|\bm{h}_i|
+    \end{equation}
+    其中
+    \begin{equation}
+        \bm{h}_i=\frac{\partial \bm{x}}{\partial u_i}=\left(\frac{\partial x_1}{\partial u_i},\frac{\partial x_2}{\partial u_i},\frac{\partial x_3}{\partial u_i}\right),\;i=1,2,3
+    \end{equation}
+    只有当切向量$\bm{h}_1,\bm{h}_2,\bm{h}_3$两两正交时，曲线坐标系是曲线正交坐标系，才有拉梅系数定义。
+    其中$\bm{x}=(x_1,x_2.x_3)$为空间中一点的笛卡尔坐标系描述，$(u_1,u_2,u_3)$为该曲线坐标系对该点的描述。\\
+    这里只考虑了3维的情况：涉及拉梅系数，就一定涉及到一个特定3维空间的广义正交坐标系表示和笛卡尔坐标系表示之间的关系。
+
+    例如：
+    \begin{equation}
+        \mbox{柱坐标系}\left\{\begin{aligned}
+            &\bm{h}_1=\left(\frac{\partial \cos\phi}{\partial \rho},\frac{\partial \sin\phi}{\partial \rho},\frac{\partial z}{\partial \rho}\right)\\
+            &\bm{h}_2=\left(\frac{\partial \cos\phi}{\partial \phi},\frac{\partial \sin\phi}{\partial \phi},\frac{\partial z}{\partial \phi}\right)\\
+            &\bm{h}_3=\left(\frac{\partial \cos\phi}{\partial z},\frac{\partial \sin\phi}{\partial z},\frac{\partial z}{\partial z}\right)
+        \end{aligned}\right.
+        \Rightarrow
+        \left\{\begin{aligned}
+            &h_1=|\left(\cos\phi,\sin\phi,0\right)|=1\\
+            &h_2=|\left(-\rho\sin\phi,\rho\cos\phi,0\right)|=\rho\\
+            &h_3=|\left(0,0,1\right)|=1
+        \end{aligned}\right.
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \mbox{球坐标系}\left\{\begin{aligned}
+                &\bm{h}_1=\left(\frac{\partial r\sin\theta\cos\phi}{\partial r},\frac{\partial r\sin\theta\sin\phi}{\partial r},\frac{\partial r\cos\theta}{\partial r}\right)\\
+                &\bm{h}_2=\left(\frac{\partial r\sin\theta\cos\phi}{\partial \theta},\frac{\partial r\sin\theta\sin\phi}{\partial \theta},\frac{\partial r\cos\theta}{\partial \theta}\right)\\
+                &\bm{h}_3=\left(\frac{\partial r\sin\theta\cos\phi}{\partial \phi},\frac{\partial r\sin\theta\sin\phi}{\partial \phi},\frac{\partial r\cos\theta}{\partial \phi}\right)
+            \end{aligned}\right.\\
+            \Rightarrow
+            \left\{\begin{aligned}
+                &h_1=|\left(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta\right)|=1\\
+                &h_2=|\left(r\cos\theta\cos\phi,r\cos\theta\cos\phi,-r\sin\theta\right)|=r\\
+                &h_3=|\left(-r\sin\theta\sin\phi,r\sin\theta\cos\phi,0\right)|=r\sin\theta
+            \end{aligned}\right.
+        \end{aligned}
+    \end{equation}
+\section{公式与定理}
+    \subsection{华里士公式}
+    \begin{equation}
+        \int_{0}^{\frac{\pi}{2}}\sin^nx\,\mathrm{d}x=
+        \left\{
+            \begin{aligned}
+                &\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\,\cdots\,\cdot\frac{3}{4}\cdot\frac{1}{2}{\,\color{red}\cdot\,\frac{\pi}{2}}\;,\quad \mathrm{even} ~n\\
+                &\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\,\cdots\,\cdot\frac{4}{5}\cdot\frac{2}{3}\;,\quad \mathrm{odd} ~n
+            \end{aligned}
+        \right.
+    \end{equation}
+
+    \subsection{矢量恒等式}
+    \begin{subequations}
+        \begin{align}
+            &\nabla\cdot(\nabla\times\vec{A})=0&\mbox{“旋无源”}\\
+            &\nabla\times(\nabla \varphi)=\vec{0}&\mbox{“梯无旋”}\\
+            &\nabla\times \nabla\times\vec{A}=\nabla(\nabla\cdot\vec{A})-\nabla^2 \vec{A}&
+        \end{align}
+    \end{subequations}
+
+    \subsection{斯托克斯公式}
+    设矢量$\vec{A}\in \mathbb{R}^3$的三个分量都在有向曲面$S$及其边界$\partial S=\Gamma$上具有连续的一阶偏导数，且$\Gamma$的正向与$S$的侧符合右手规则，则：
+    \begin{equation}
+        \iint_S \nabla\times\vec{A}\cdot\mathrm{d}\vec{S}
+        =\oint_\Gamma \vec{A}\cdot\mathrm{d}\vec{r}
+    \end{equation}

@@ -1,0 +1,439 @@
+% !TeX root = Microwave.tex
+\chapter{Guide Wave Systems 波导系统}
+\begin{equation*}
+\mbox{波导的一般理论}
+\begin{cases}
+    \mbox{广义传输线理论}\\
+    \mbox{用纵向分量表示的分离变量法理论}\\
+    \mbox{本征模理论}
+\end{cases}
+\end{equation*}
+\section{广义传输线理论}
+
+    \subsection{出发点和假定条件}
+
+    \begin{enumerate}
+        \item 假设条件
+            \begin{itemize}
+                \item 波导为均匀理想导体，性质不随$z$（沿传播方向的距离）变化；
+                \item 介质均匀，$\mu,\,\varepsilon\in\mathbb{C}$；
+            \end{itemize}
+        \item 理论基础
+            \begin{subequations}
+                \begin{numcases}{\mbox{无源区域的频域Maxwell方程组}}
+                    \nabla\times\vec{H}=\mathrm{j}\omega \varepsilon \vec{E}\\
+                    \nabla\times\vec{E}=-\mathrm{j}\omega \mu \vec{H}\\
+                    \nabla\cdot\vec{E}=0\\
+                    \nabla\cdot\vec{H}=0
+                \end{numcases}
+            \end{subequations}
+    \end{enumerate}
+
+    \subsection{Generalized Transmission Line Theory 广义传输线理论}
+
+    \paragraph{引入概念——\underline{横向分量、纵向分量}：}把沿波导方向作为纵向($z$)，垂直于波导方向为横向($t$)（$t$在$xoy$面内，t=transverse）。并定义横向矢量的算子:
+    \begin{equation*}
+        \nabla_t=\hat{x}\frac{\partial }{\partial x}+\hat{y}\frac{\partial }{\partial y}
+    \end{equation*}
+    因此有$\nabla=\nabla_t+\hat{z}\frac{\partial }{\partial z}$。
+
+    注意，分解方向后，式$\nabla\times\vec{H}=\mathrm{j}\omega \varepsilon \vec{E}$变为：
+    \begin{align*}
+        &\qquad \left(\nabla_t+\hat{z}\frac{\partial }{\partial z}\right)\times\left( \vec{H}_{t}+\hat{z}H_{z}\right)=\mathrm{j}\omega \varepsilon\left(\vec{E}_t+\hat{z}E_z\right)\\
+        &\begin{array}{ccccccc}
+            =&\nabla_t\times \vec{H}_t&+&\nabla_t\times(\hat{z}H_z)&+&\hat{z}\times \frac{\partial \vec{H}_t}{\partial z}&+0\\
+            =&\begin{vmatrix}
+                \hat{x}&\hat{y}&\hat{z}\\
+                \frac{\partial }{\partial x}&\frac{\partial }{\partial y}&0\\
+                H_x(x,y,z)&H_y(x,y,z)&0
+            \end{vmatrix}&+
+            &\begin{vmatrix}
+                \hat{x}&\hat{y}&\hat{z}\\
+                \frac{\partial }{\partial x}&\frac{\partial }{\partial y}&0\\
+                0&0&H_z(x,y,z)
+            \end{vmatrix}&+
+            &\begin{vmatrix}
+                \hat{x}&\hat{y}&\hat{z}\\
+                0&0&\frac{\partial }{\partial z}\\
+                H_x(x,y,z)&H_y(x,y,z)&0
+            \end{vmatrix}&\\
+            &\mbox{沿纵向($z$)}&&\mbox{沿横向$(x,y)$}&&\mbox{沿横向$(x,y)$}&
+        \end{array}
+    \end{align*}
+
+    \paragraph{广义传输线理论的归一化条件：}
+    ~\\[-15pt]
+
+    电场、磁场的  \underline{振动方向}和  \underline{变化函数}是独立变化的。基于此，每一个振动分量都可以视作振动方向单位矢量与时空上变化的函数的乘积：
+    \begin{equation*}
+        \vec{\cdot}(x,y,z;t)=\hat{x}\cdot_x(x,y,z;t)+\hat{y}\cdot_y(x,y,z;t)+\hat{z}\cdot_z(x,y,z;t)
+    \end{equation*}
+    把横向电场和横向磁场也拆分成一个方向矢量与变化函数的乘积：
+    \begin{subequations}
+        \begin{numcases}{}
+            \vec{E}_t=\vec{e}_t u(z) \\
+            \vec{H}_t=\vec{h}_t i(z)
+        \end{numcases}
+    \end{subequations}
+    但注意这里这里的$\vec{e}_t$和$\vec{h}_t$并不强制要求为单位矢量，而是只需满足归一化条件：
+    \begin{equation}\label{Equ: normalization of vec e_t h_t}
+        \iint\limits_{S} \vec{e}_t \times \vec{h}_t \cdot \hat{z} \,\mathrm{d}S=1\color{red}
+    \end{equation}
+    \uwave{书上并没有说这个归一化条件怎么来的，但是根据其}$z$\uwave{方向的指向以及面积分的形式，应该是和坡印廷矢量有关，为了确保能量守恒。}
+    \paragraph{确定广义传输线参数的附加约束条件：}
+
+    为了使$L,C,Z_0$固定，还应满足附加约束条件
+    \begin{equation}
+        \left\vert \frac{\vec{e}_t}{\vec{h}_t}\right\vert=1
+    \end{equation}
+    这是因为归一化条件的约束并不严格，对于已经满足式(\ref{Equ: normalization of vec e_t h_t})的$\vec{e}_t$和$\vec{h}_t$，将其中一个乘$A$倍而另一个除以$A$，仍能继续满足归一化条件。
+
+
+    \paragraph{广义传输线理论的三种模式：}
+    \begin{enumerate}
+        \item TEM（横电磁）模：电磁场只有横向分量($E_z=0,\,H_z=0$)
+
+        \item TE（横电）模：电场只有横向分量($E_z=0$)
+        \item TM（横磁）模：磁场只有横向分量($H_z=0$)
+    \end{enumerate}
+
+    \begin{subequations}
+        \begin{numcases}{\mbox{\color{red}广义传输线方程}}
+            \frac{\mathrm{d}u(z)}{\mathrm{d}z}=-\mathrm{j}\omega Li(z) \\
+            \frac{\mathrm{d}i(z)}{\mathrm{d}z}=-\mathrm{j}\omega Cu(z)
+        \end{numcases}
+    \end{subequations}
+\subsection{从双导线到波导}
+\section{TE{\scriptsize 10} Mode in Rectangular Waveguide 矩形波导TE{\scriptsize 10}模}
+    TE{\scriptsize 10}模是矩形波导的传输主模式、截止频率最低模式。若认为传播常数无耗，则$\gamma=\mathrm{j}\beta$
+    \begin{subequations}
+        \begin{numcases}{}
+            E_z=0 \\
+            H_z=H_0\cos{\left(\frac{\pi}{a}x\right)}\mathrm{e}^{-\mathrm{j}\beta z}
+        \end{numcases}
+    \end{subequations}
+    \begin{subequations}
+        \begin{numcases}{}
+            E_y=-\mathrm{j}\frac{\omega \mu}{k_c^2}\left(\frac{\pi}{a}\right)H_0\sin{\left(\frac{\pi}{a}x\right)}\mathrm{e}^{-\mathrm{j}\beta z}\\
+            H_x=\frac{\mathrm{j}\beta}{k_c^2}\left(\frac{\pi}{a}\right)H_0\sin{\left(\frac{\pi}{a}x\right)}\mathrm{e}^{-\mathrm{j}\beta z}
+        \end{numcases}
+    \end{subequations}
+    时域表达式：
+    \begin{subequations}
+        \begin{numcases}{\mbox{TE{\scriptsize 10}模场瞬时表达式}}
+            H_z=H_0\cos{\left(\frac{\pi}{a}x\right)}\cos(\omega t-\beta z) \\
+            E_y=\frac{\omega \mu}{k_c^2}\left(\frac{\pi}{a}\right)H_0\sin{\left(\frac{\pi}{a}x\right)}\sin(\omega t-\beta z)\\
+            H_x=-\frac{\beta}{k_c^2}\left(\frac{\pi}{a}\right)H_0\sin{\left(\frac{\pi}{a}x\right)}\sin(\omega t-\beta z)
+        \end{numcases}
+    \end{subequations}
+    其中，截止波数：
+    \begin{align}
+        k_c&=\sqrt{\left(\frac{m\pi}{a}\right)^2+\left(\frac{n\pi}{b}\right)^2}=\frac{2\pi}{\lambda_c}\\
+        &=\frac{\pi}{a}\notag
+    \end{align}
+    \paragraph{截止波长：}
+    \begin{equation}
+        \lambda_c=2a
+    \end{equation}
+
+    \paragraph{TE{\scriptsize 10}模单模传输条件(默认$a>b$)：}
+    ~\\
+    当$a>2b$时，第二模为 TE{\scriptsize 20}模
+    \begin{equation}
+        \begin{matrix}
+            a&<&\lambda&<&2a\\
+            \mbox{TE{\scriptsize 20}截止}&~&~&~&\mbox{TE{\scriptsize 10}截止}
+        \end{matrix}
+    \end{equation}
+    当$a<2b$时，第二模为 TE{\scriptsize 01}模
+    \begin{equation}
+        \begin{matrix}
+            2b&<&\lambda&<&2a\\
+            \mbox{TE{\scriptsize 01}截止}&~&~&~&\mbox{TE{\scriptsize 10}截止}
+        \end{matrix}
+    \end{equation}
+    \paragraph{导波波长：}
+    \begin{equation}
+        \lambda_g =\frac{\lambda}{\sqrt{1-\left(\frac{\lambda}{2a}\right)^2}}
+    \end{equation}
+
+    若定义拉伸因子$\xi=\frac{\lambda_g }{\lambda}$，则$\xi>1$，且有以下结论
+
+    \paragraph{相速度：}
+    \begin{equation}
+        v_p=\xi c{\color{gray}\;>c}
+    \end{equation}
+
+    \paragraph{群速度：}
+    \begin{equation}
+        v_g=\frac{c^2}{v_p}=\frac{c}{\xi}{\color{gray}\;<c}
+    \end{equation}
+
+    \paragraph{波形阻抗：}
+    \begin{equation}
+        \eta_\mathrm{TE_{10}}=\xi\eta
+    \end{equation}
+
+    \paragraph{特性阻抗：}
+    \begin{equation}
+        Z_0=\xi\frac{b}{a}\eta
+    \end{equation}
+
+    \paragraph{功率容量:}（传输功率的最大值）
+    \begin{equation}
+        \begin{aligned}
+            P_\mathrm{max}&=\left[\frac{1}{2}\Re\iint\left(E\times H^* \right)\mathrm{d}S \right]_{E_{0m}=E_\mathrm{max}}{\color{gray}\cdot\frac{\left(\rho+1\right)^2}{4\rho^2}} \\
+            &=\frac{1}{2} \int_{0}^{b}\,\mathrm{d}y \int_{0}^{a}\frac{|E_\mathrm{max}|^2}{\eta_\mathrm{TE_{10}}}\sin^2\left(\frac{\pi}{a}x\right)\,\mathrm{d}x {\color{gray}\cdot\frac{\left(\rho+1\right)^2}{4\rho^2}}\\
+            &=\frac{E_\mathrm{max}^2ab\sqrt{\varepsilon_r}}{480\pi\xi}{\color{gray}\cdot\frac{\left(\rho+1\right)^2}{4\rho^2}}
+        \end{aligned}
+    \end{equation}
+\section{Eigenmodes in Rectangular Waveguide 矩形波导中的本征模}
+
+矩形波导的一般解：
+    \begin{subequations}
+        \begin{numcases}{\mbox{TE{\scriptsize mn}模}}
+            E_z=0 \\
+            H_z=H_0\cos\left(\frac{m\pi}{a}x\right)\cos\left(\frac{n\pi}{b}y\right)\mathrm{e}^{-\gamma z}
+        \end{numcases}
+    \end{subequations}
+    \begin{subequations}
+        \begin{numcases}{\mbox{TM{\scriptsize mn}模}}
+            E_z=E_0\sin\left(\frac{m\pi}{a}x\right)\sin\left(\frac{n\pi}{b}y\right)\mathrm{e}^{-\gamma z} \\
+            H_z=0
+        \end{numcases}
+    \end{subequations}
+    其中，$k=\omega\sqrt{\varepsilon\mu}$，
+    \begin{equation}
+        \gamma^2=k_c^2-k^2
+    \end{equation}
+
+    直角坐标系下，使用纵向场表示横向场：
+    \begin{equation}
+        \begin{bmatrix}
+            E_x\\E_y\\H_x\\H_y
+        \end{bmatrix}
+        ={\color{red}\frac{1}{k_c^2}}\begin{bmatrix}
+            -\gamma&0&0&{\color{red}-}\mathrm{j}\omega {\color{cyan}\mu}\\
+            0&-\gamma&\mathrm{j}\omega {\color{cyan}\mu}&0\\
+            0&\mathrm{j}\omega {\color[RGB]{87,218,101}\varepsilon}&-\gamma&0\\
+            {\color{red}-}\mathrm{j}\omega {\color[RGB]{87,218,101}\varepsilon}&0&0&-\gamma\\
+        \end{bmatrix}
+        \begin{bmatrix}
+            \frac{\partial E_z}{\partial x}\\\frac{\partial E_z}{\partial y}\\\frac{\partial H_z}{\partial x}\\\frac{\partial H_z}{\partial y}
+        \end{bmatrix}
+    \end{equation}
+    其中，截止波数：
+    \begin{equation}
+        k_c=\sqrt{\left(\frac{m\pi}{a}\right)^2+\left(\frac{n\pi}{b}\right)^2}=\frac{2\pi}{\lambda_c}
+    \end{equation}
+    因此，截止波长;
+    \begin{equation}
+        \lambda_c=\frac{2}{\sqrt{\left(\frac{m}{a}\right)^2+\left(\frac{n}{b}\right)^2}}
+    \end{equation}
+    矩形波导中的工作波长，即波导波长，与截止波长的关系为：
+    \begin{equation}
+        \lambda_g=\frac{\lambda}{\sqrt{1-\left(\frac{\lambda}{\lambda_c}\right)^2}}
+    \end{equation}
+\section{Problems 例题讲解}
+
+\section{Circular Waveguide 圆波导}
+
+    \paragraph{为什么要用圆波导：}
+    \begin{enumerate}
+        \item 几何对称性应用广泛；
+        \item 功率容量$P_{max}\varpropto$截面积；衰减因子$\alpha\varpropto$截面周长。因此圆波导传输能量效率高。
+        \item 圆波导的TE{\scriptsize01}模只有横向电流，高频衰减小。
+    \end{enumerate}
+
+\subsection{圆波导的一般解}
+    引入柱坐标系$(r,\phi,z)$。计算柱坐标系下旋度、散度需引入拉梅系数$[h_1,h_2,h_3]=[1,r,1]$。
+    \begin{subequations}
+        \begin{numcases}{\mbox{纵向分量法}}
+            \nabla^2E_z+k^2E_z=0 \\
+            \nabla^2H_z+k^2H_z=0
+        \end{numcases}
+    \end{subequations}
+    其中，$\nabla^2=\dfrac{1}{r}\dfrac{\partial }{\partial r}\left(r \dfrac{\partial }{\partial r}\right)+\dfrac{1}{r^2}\dfrac{\partial^2}{\partial \varphi^2}+\dfrac{\partial^2}{\partial z^2}$。
+
+    \begin{subequations}
+        \begin{numcases}{\mbox{分离变量法}}
+            \mbox{对于TE模：}H_z=H_tZ(z)=R(r)\Phi(\varphi)Z(z) \\
+            \mbox{对于TM模：}E_z=E_tZ(z)=R(r)\Phi(\varphi)Z(z)
+        \end{numcases}
+    \end{subequations}
+
+    代入纵向场满足的方程组，得圆波导一般解：
+    \begin{subequations}
+        \begin{numcases}{\mbox{TE{\scriptsize mn}模}}
+            E_z=0 \\
+            H_z=H_0 \mathrm{J}_m\left(k_cr\right)
+            \begin{pmatrix}
+                \cos m \varphi\\
+                \sin m \varphi
+            \end{pmatrix}
+            \mathrm{e}^{-\gamma z}\label{Equ: 圆波导TE模Hz}
+        \end{numcases}
+    \end{subequations}
+    \begin{subequations}
+        \begin{numcases}{\mbox{TM{\scriptsize mn}模}}
+            E_z=E_0 \mathrm{J}_m\left(k_cr\right)
+            \begin{pmatrix}
+                \cos m \varphi\\
+                \sin m \varphi
+            \end{pmatrix}
+            \mathrm{e}^{-\gamma z}\label{Equ: 圆波导TM模Ez} \\
+            H_z=0
+        \end{numcases}
+    \end{subequations}
+    其中，$k=\omega\sqrt{\varepsilon\mu}$，
+    \begin{equation*}
+        \gamma^2=k_c^2-k^2
+    \end{equation*}
+
+    圆柱坐标系下，使用纵向场表示横向场：
+    \begin{equation}
+        \begin{bmatrix}
+            E_r\\E_\varphi\\H_r\\H_\varphi
+        \end{bmatrix}
+        ={\color{red}\frac{1}{k_c^2}}\begin{bmatrix}
+            -\gamma&0&0&{\color{red}-}\mathrm{j}\omega {\color{cyan}\mu}\\
+            0&-\gamma&\mathrm{j}\omega {\color{cyan}\mu}&0\\
+            0&\mathrm{j}\omega {\color[RGB]{87,218,101}\varepsilon}&-\gamma&0\\
+            {\color{red}-}\mathrm{j}\omega {\color[RGB]{87,218,101}\varepsilon}&0&0&-\gamma\\
+        \end{bmatrix}
+        \begin{bmatrix}
+            \frac{\partial E_z}{\partial r}\\\frac{1}{r}\frac{\partial E_z}{\partial \varphi}\\\frac{\partial H_z}{\partial r}\\\frac{1}{r}\frac{\partial H_z}{\partial \varphi}
+        \end{bmatrix}
+    \end{equation}
+    注意，解\hyperref[Equ: 圆波导TE模Hz]{式(\ref*{Equ: 圆波导TE模Hz})}和\hyperref[Equ: 圆波导TM模Ez]{式(\ref*{Equ: 圆波导TM模Ez})}已经使用了边界条件之一：$R(0)\neq\infty$。否则，场的完整解应包含$\begin{pmatrix}
+        \mathrm{J}_m\left(k_cr\right)\\\mathrm{N}_m\left(k_cr\right)
+    \end{pmatrix}$项。
+
+
+    还有两个边界条件：周期条件$\Phi(\varphi)=\Phi(\varphi+\pi)$决定了$m\in\mathbb{Z}$，理想导体边界条件决定了$E_z\,,\;E_\varphi|_{r=R}=0$。
+
+    由后者可以解出：
+    \begin{subequations}
+        \begin{numcases}{\mbox{}}
+            \mbox{对于TE模：}\mathrm{J}'_m\left(k_cR\right)=0 \\
+            \mbox{对于TM模：}\mathrm{J}_m\left(k_cR\right)=0
+        \end{numcases}
+    \end{subequations}
+
+    因此，圆波导TE{\scriptsize mn}模的截止波数：
+    \begin{equation}
+        k_c=\frac{\mu_{mn}}{R}
+    \end{equation}
+    截止波长：
+    \begin{equation}
+        \lambda_c=\frac{2\pi R}{\mu_{mn}}
+    \end{equation}
+    其中$\mu_{mn}$是第一类$m$阶\emph{Bessel}函数{\color{red}导数}的第$n$个根。
+
+
+    同理，圆波导TM{\scriptsize mn}模的截止波数：
+    \begin{equation}
+        k_c=\frac{\nu_{mn}}{R}
+    \end{equation}
+    截止波长：
+    \begin{equation}
+        \lambda_c=\frac{2\pi R}{\nu_{mn}}
+    \end{equation}
+    其中$\nu_{mn}$是第一类$m$阶\emph{Bessel}函数的第$n$个根。
+
+
+\subsection{圆波导的主要性质}
+    \paragraph{圆波导的简并模式：}
+    根据\emph{Bessel}函数的性质
+    \begin{equation}
+        x \mathrm{J}'_n\left(x\right)+n \mathrm{J}_n\left(x\right)=x \mathrm{J}_{n-1}\left(x\right)
+    \end{equation}
+    $n=0$时有$\mathrm{J}'_0=-\mathrm{J}_1$，因此$0$阶\emph{Bessel}函数的导数与$1$阶\emph{Bessel}函数具有相同的根。
+    故 TE{\scriptsize 0n}模和 TM{\scriptsize 1n}模将发生\uline{模式简并}。
+
+
+    除了模式之间的简并，圆波导在$m\neq 0$的同种模式下还会发生极化简并。场分布可以分为$\cos m \varphi$和$\sin m \varphi$两个正交的方向。
+    当圆波导出现椭圆度时，模式的极化简并方式会变化，所以一般情况不宜采用圆波导来传输微波能量，而采用矩形波导 TE{\scriptsize 10}模传输。（模式的变化会导致匹配恶劣，能量反射）
+
+    \paragraph{圆波导中$m$和$n$的含义}
+    ~
+    \begin{table}[h!]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        \renewcommand\cellgape{\Gape[4pt]}
+        \makecell[cc]{矩形波导}&\makecell[cc]{圆波导}\\
+        \hline
+        \makecell[cc]{$m$表示$x$方向变化的半周期数}&\makecell[cc]{$m$表示圆周方向的整驻波数}\\
+        \makecell[cc]{$n$表示$y$方向变化的半周期数}&\makecell[cc]{$n$表示半径方向分布的场的极大值个数}\\
+        \bottomrule
+    \end{tabular}
+    \end{table}
+
+\subsection{圆波导中的三种主要波形}
+    \begin{enumerate}
+        \item 主传输模 {\bfseries TE{\scriptsize 11}模}\quad 截止波长最长：
+            \begin{equation}
+                \lambda_c=3.412R
+            \end{equation}
+            波导波长：
+            \begin{equation}
+                 \lambda_g =\frac{\lambda}{\sqrt{1-\left(\frac{\lambda}{3.412R}\right)^2}}
+            \end{equation}
+            常应用于波导的方圆过渡。这是因为圆波导的 TE{\scriptsize 11}模和矩形波导的 TE{\scriptsize 10}的场分布十分相似。\\
+            虽然是主传输模， TE{\scriptsize 11}模却不适合用于微波传输线，而只是用于微波元件。这是因为它有两种极化方向\uwave{（极化简并）}。
+        \item 损耗最小的模 {\bfseries TE{\scriptsize 01}模}\quad 截止波长：
+            \begin{equation}
+                \lambda_c=1.641R
+            \end{equation}
+            常应用于高Q谐振腔、毫米波远距离传输。
+        \item 轴对称的模式 {\bfseries TM{\scriptsize 01}模}\\
+            \begin{equation}
+                \lambda_c=2.62R
+            \end{equation}
+            常应用于雷达的旋转关节。
+    \end{enumerate}
+\section{Coaxial Transmission Line and Parallel-Plate Waveguide 同轴线和平板波导}
+\subsection{同轴线}
+    三种解法
+\subsection{非均匀填充的平面波导}
+介质波导和光纤中存在的模式有： TE{\scriptsize 0n}, TM{\scriptsize 0n}, HE{\scriptsize mn}， EH{\scriptsize mn}。
+
+\section{Dielectric Waveguide 介质波导}
+考虑介质区域内外场不同，用折射率表示：
+\begin{equation}
+    k_i=n_ik_0
+\end{equation}
+其中$i=1,2$分别表示介质内、外区域，其折射率$n_i=\sqrt{\varepsilon_{ri}}$，$k_0=\omega\sqrt{\mu_0 \varepsilon_0}$
+
+\section{耦合传输线}
+
+
+\section{小结}
+    \begin{table}[htb]
+    \centering
+    \captionof{table}{\kaishu 各种波导的特性和参数计算}\label{Tab: Waveguide Summary}
+    \resizebox{\textwidth}{!}
+    {\begin{tabular}{cp{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+        \toprule
+        \renewcommand\cellgape{\Gape[8pt]}
+        \makecell[cc]{~}
+        &\makecell[cc]{同轴线}&\makecell[cc]{平板波导}&\makecell[cc]{带线}
+        &\makecell[cc]{微带线}&\makecell[cc]{介质波导}&\makecell[cc]{光纤}\\
+        \hline
+        \makecell[cc]{主模式}
+        &\makecell[cc]{TEM}&\makecell[cc]{TEM(均匀)\\TM(非均匀)}&\makecell[cc]{TEM}
+        &\makecell[cc]{准TEM}&\makecell[cc]{HE{\scriptsize 11}}&\makecell[cc]{HE{\scriptsize 11}}\\
+        \makecell[cc]{截止波长}
+        &\makecell[cc]{$\infty$}&\makecell[cc]{$\infty$}&\makecell[cc]{$\infty$}
+        &\makecell[cc]{?}&\makecell[cc]{$\infty$}&\makecell[cc]{$\infty$}\\
+        \makecell[cc]{波导波长}
+        &\makecell[cc]{}&\makecell[cc]{}&\makecell[cc]{}
+        &\makecell[cc]{$\frac{\lambda_0}{\varepsilon_r}$\\$1<\varepsilon_e<\varepsilon_r$}&\makecell[cc]{}&\makecell[cc]{}\\
+        \makecell[cc]{特性阻抗}
+        &\makecell[cc]{$\frac{60}{\sqrt{\varepsilon_r}}\ln\left(\frac{b}{a}\right)$}&\makecell[cc]{}&\makecell[cc]{$\sqrt{\frac{L}{C}}=\frac{1}{v_pC}$}&
+        \makecell[cc]{$\frac{Z_{01}}{\sqrt{\varepsilon_e}}$}&\makecell[cc]{}&\makecell[cc]{}\\
+        \bottomrule
+    \end{tabular}}
+    \end{table}
+

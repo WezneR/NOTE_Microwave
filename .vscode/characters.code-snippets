@@ -1,0 +1,121 @@
+{
+	"complex powers of the natural exponent 2":{
+		"scope": "latex",
+		"prefix": "expjkz",
+		"body": "\\mathrm{e}^{${1:-}\\mathrm{j}${2:k} ${3:z}}",
+		"description": "e的复指数复场量形式",
+	},
+	"complex powers of the natural exponent 3":{
+		"scope": "latex",
+		"prefix": "expjbz",
+		"body": "\\mathrm{e}^{${1:-}\\mathrm{j}${2:\\beta} ${3:z}}",
+		"description": "e的复指数微波电压形式",
+	},
+	"Γ(z')":{
+		"scope": "latex",
+		"prefix": "gamma(z')",
+		"body": "\\varGamma(${1:z'})",
+		"description": "任意位置的反射系数"
+	},
+	"Γ_l":{
+		"scope": "latex",
+		"prefix": "gamma_l",
+		"body": "\\varGamma_l",
+		"description": "任意位置的反射系数"
+	},
+	"λ_g（波导波长）":{
+		"scope": "latex",
+		"prefix": "lambda_g",
+		"body": "\\lambda_g ",
+	},
+	"βz'（相位因子与长度的积）":{
+		"scope": "latex",
+		"prefix": "beta z'",
+		"body": "\\beta z' ",
+	},
+	"|Γ_l|（反射系数的模）":{
+		"body": "|\\varGamma_l|",
+		"prefix": "|gamma_l|",
+		"scope": "latex"
+	},
+	"E_.(x,y,z)":{
+		"body": "E${1:_${3|x,y,z,t|}}${2:(x,y,z)}",
+		"description": "电场的分量",
+		"prefix": "Exyz",
+		"scope": "latex",
+	},
+	"H_.(x,y,z)":{
+		"body": "H${1:_${3|x,y,z,t|}}${2:(x,y,z)}",
+		"description": "磁场的分量",
+		"prefix": "Hxyz",
+		"scope": "latex",
+	},
+	"vec E_.":{
+		"body": "\\vec{E}_${1|x,y,z,t|}",
+		"description": "电场矢量的分量",
+		"prefix": "vecE_",
+		"scope": "latex",
+	},
+	"vec H_.":{
+		"body": "\\vec{H}_${1|x,y,z,t|}",
+		"description": "磁场矢量的分量",
+		"prefix": "vecH_",
+		"scope": "latex",
+	},
+	"▽_t":{
+		"body": "\\nabla${1:_t}",
+		"description": "横向nabla算子",
+		"prefix": "nabla",
+		"scope": "latex",
+	},
+	"▽_t ×":{
+		"body": "\\nabla_t\\times",
+		"description": "横向旋度",
+		"prefix": "rott",
+		"scope": "latex",
+	},
+	"zEHz":{
+		"body": "\\hat{z}${1|E,H|}_z",
+		"description": "纵向电场/纵向磁场",
+		"prefix": "zEHz",
+		"scope": "latex",
+	},
+	// "ehtEHt":{
+	// 	"body": "\\hat{z}${1|E,H|}_z",
+	// 	"description": "横向电场/横向磁场",
+	// 	"prefix": "et",
+	// 	"scope": "latex",
+	// },
+	"vec e_t":{
+		"body": "\\vec{e}_t",
+		"description": "横电场方向矢量",
+		"prefix": "et",
+		"scope": "latex",
+	},
+	"vec h_t":{
+		"body": "\\vec{h}_t",
+		"description": "横电场方向矢量",
+		"prefix": "ht",
+		"scope": "latex",
+	},
+	"横电模":{
+		"body": "TE{\\scriptsize $1}",
+		"prefix": "TE",
+		"scope": "latex"
+	},
+	"横磁模":{
+		"body": "TM{\\scriptsize $1}",
+		"prefix": "TM",
+		"scope": "latex"
+	},
+	"tcb_note":{
+		"body": [
+			"\\begin{tcbnote}",
+            "\t$1",
+			"\\end{tcbnote}",
+		],
+		"prefix": "note",
+		"scope": "latex"
+	},
+
+}

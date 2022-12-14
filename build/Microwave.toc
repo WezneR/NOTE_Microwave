@@ -1,0 +1,193 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}Transmission Line Theory 传输线理论 }{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Transmission Line Equation 传输线方程 }{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}微波传输线}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}传输线方程}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}无耗传输线方程}{5}{subsection.1.1.3}%
+\contentsline {paragraph}{本征模思想：}{5}{paragraph*.2}%
+\contentsline {subsection}{\numberline {1.1.4}无耗传输线的边界条件}{6}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Transmission Analysis I 传输状态分析 I }{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}任意位置的反射系数}{7}{subsection.1.2.1}%
+\contentsline {subsubsection}{反射系数$\varGamma (z)$}{7}{subsubsection*.4}%
+\contentsline {paragraph}{电流反射系数：}{7}{paragraph*.5}%
+\contentsline {paragraph}{使用前向电压电流和反射系数表示任意位置的电压电流：}{7}{paragraph*.6}%
+\contentsline {paragraph}{输入阻抗与特征阻抗通过反射系数转化：}{8}{paragraph*.7}%
+\contentsline {paragraph}{反射系数的性质：}{8}{paragraph*.8}%
+\contentsline {subsection}{\numberline {1.2.2}任意位置的输入阻抗}{8}{subsection.1.2.2}%
+\contentsline {subsubsection}{输入阻抗$Z(z)$}{8}{subsubsection*.9}%
+\contentsline {paragraph}{输入阻抗的性质：}{8}{paragraph*.10}%
+\contentsline {paragraph}{总结：}{9}{paragraph*.11}%
+\contentsline {subsection}{\numberline {1.2.3}电压驻波比——传输系统的不变量}{9}{subsection.1.2.3}%
+\contentsline {paragraph}{反射系数与驻波比的关系}{9}{paragraph*.13}%
+\contentsline {paragraph}{输入阻抗与驻波比的关系}{10}{paragraph*.14}%
+\contentsline {paragraph}{功率与驻波比}{10}{paragraph*.15}%
+\contentsline {subsection}{\numberline {1.2.4}行驻波功率关系}{11}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}传输线的行波状态}{11}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}传输线的全驻波状态}{11}{subsection.1.2.6}%
+\contentsline {paragraph}{总结——全驻波任意电抗负载下各参数求法：}{13}{equation.1.2.48}%
+\contentsline {section}{\numberline {1.3}Transmission Analysis II 传输状态分析 II }{14}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}传输线的行驻波状态}{14}{subsection.1.3.1}%
+\contentsline {paragraph}{总结——行驻波任意阻抗负载下各参数求法：}{14}{equation.1.3.54}%
+\contentsline {subsection}{\numberline {1.3.2}行驻波阻抗图形}{15}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Transmission Matrix Solution 传输矩阵解 }{15}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}传输线段的矩阵解}{15}{subsection.1.4.1}%
+\contentsline {subsubsection}{单边拉普拉斯变换求解无耗传输线模型}{15}{subsubsection*.20}%
+\contentsline {subsubsection}{传输线段矩阵}{16}{subsubsection*.21}%
+\contentsline {subsubsection}{传输线段矩阵导出输入阻抗和电压电流逆变换}{16}{subsubsection*.22}%
+\contentsline {subsection}{\numberline {1.4.2}传输矩阵的普遍理论}{16}{subsection.1.4.2}%
+\contentsline {subsubsection}{传输线段的A参数矩阵}{16}{subsubsection*.23}%
+\contentsline {subsubsection}{二端口网络性质的A参数描述}{16}{subsubsection*.24}%
+\contentsline {subsubsection}{阻抗归一化的A参数矩阵}{16}{subsubsection*.25}%
+\contentsline {subsection}{\numberline {1.4.3}微波元件的A参数矩阵}{17}{subsection.1.4.3}%
+\contentsline {subsubsection}{串并联阻抗的传输矩阵}{17}{subsubsection*.26}%
+\contentsline {subsubsection}{微波传输线枝节的传输矩阵}{17}{subsubsection*.27}%
+\contentsline {section}{\numberline {1.5}Problems 例题讲解}{17}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Smith Chart 史密斯圆图}{17}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Smith圆图基本原理}{17}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Smith圆图基本性质}{19}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Smith圆图功能和应用}{19}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Impedance Matching 阻抗匹配}{19}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}电抗性负载匹配}{19}{subsection.1.7.1}%
+\contentsline {subsubsection}{网络匹配定理}{19}{subsubsection*.29}%
+\contentsline {paragraph}{无耗互易网络$\mathrm {\bm {A}}$匹配任意电抗性负载$\bar {Z}_l$的一般定理：}{19}{paragraph*.30}%
+\contentsline {section}{\numberline {1.8}{\small Computation Solutions for Transmission Theory} 传输线计算机解}{19}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Problems 例题讲解}{19}{section.1.9}%
+\contentsline {paragraph}{1}{19}{paragraph*.31}%
+\contentsline {paragraph}{2}{19}{paragraph*.32}%
+\contentsline {paragraph}{3}{19}{paragraph*.33}%
+\contentsline {paragraph}{4}{20}{paragraph*.34}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}Guide Wave Systems 波导系统}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}广义传输线理论}{21}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}出发点和假定条件}{21}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Generalized Transmission Line Theory 广义传输线理论}{21}{subsection.2.1.2}%
+\contentsline {paragraph}{引入概念——\underline {横向分量、纵向分量}：}{21}{paragraph*.35}%
+\contentsline {paragraph}{广义传输线理论的归一化条件：}{21}{paragraph*.36}%
+\contentsline {paragraph}{确定广义传输线参数的附加约束条件：}{22}{paragraph*.37}%
+\contentsline {paragraph}{广义传输线理论的三种模式：}{22}{paragraph*.38}%
+\contentsline {subsection}{\numberline {2.1.3}从双导线到波导}{22}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}TE{\scriptsize 10} Mode in Rectangular Waveguide 矩形波导TE{\scriptsize 10}模}{22}{section.2.2}%
+\contentsline {paragraph}{截止波长：}{23}{paragraph*.39}%
+\contentsline {paragraph}{TE{\scriptsize 10}模单模传输条件(默认$a>b$)：}{23}{paragraph*.40}%
+\contentsline {paragraph}{导波波长：}{23}{paragraph*.41}%
+\contentsline {paragraph}{相速度：}{23}{paragraph*.42}%
+\contentsline {paragraph}{群速度：}{23}{paragraph*.43}%
+\contentsline {paragraph}{波形阻抗：}{23}{paragraph*.44}%
+\contentsline {paragraph}{特性阻抗：}{23}{paragraph*.45}%
+\contentsline {paragraph}{功率容量:}{24}{paragraph*.46}%
+\contentsline {section}{\numberline {2.3}Eigenmodes in Rectangular Waveguide 矩形波导中的本征模}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Problems 例题讲解}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Circular Waveguide 圆波导}{24}{section.2.5}%
+\contentsline {paragraph}{为什么要用圆波导：}{24}{paragraph*.47}%
+\contentsline {subsection}{\numberline {2.5.1}圆波导的一般解}{25}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}圆波导的主要性质}{26}{subsection.2.5.2}%
+\contentsline {paragraph}{圆波导的简并模式：}{26}{paragraph*.48}%
+\contentsline {paragraph}{圆波导中$m$和$n$的含义}{26}{paragraph*.49}%
+\contentsline {subsection}{\numberline {2.5.3}圆波导中的三种主要波形}{26}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Coaxial Transmission Line and Parallel-Plate Waveguide 同轴线和平板波导}{27}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}同轴线}{27}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}非均匀填充的平面波导}{27}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Dielectric Waveguide 介质波导}{27}{section.2.7}%
+\contentsline {section}{\numberline {2.8}耦合传输线}{27}{section.2.8}%
+\contentsline {section}{\numberline {2.9}小结}{27}{section.2.9}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}Microwave Elements and Networks 微波元件与网络分析}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}S参数的引入}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}入射波和反射波}{29}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}S参数的定义和物理意义}{29}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}网络性质的S参数描述}{30}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}S参数的变换定理}{30}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}负载变换}{30}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}A参数矩阵转化为S参数矩阵}{30}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}单端口元件}{31}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}匹配元件}{31}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}短路元件}{31}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}失配元件}{31}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}Microwave Resonators Theory 微波谐振腔理论}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}微波谐振腔的特性参数}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}谐振波长}{32}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}品质因数}{32}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}等效电导}{32}{subsection.4.1.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}天线理论基础}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}电磁场基本方程}{33}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Maxwell方程组}{33}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}本构关系}{34}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}电介质的性质}{35}{subsection.5.1.3}%
+\contentsline {subsubsection}{动态介电常数}{35}{subsubsection*.54}%
+\contentsline {subsection}{\numberline {5.1.4}时变电磁场的边界条件}{35}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}时谐电磁场的复矢量表示}{36}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}坡印廷定理}{37}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}波动方程}{38}{subsection.5.1.7}%
+\contentsline {section}{\numberline {5.2}势函数及其解（矢位法）}{38}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}势函数及其规范}{39}{subsection.5.2.1}%
+\contentsline {paragraph}{库仑规范：}{39}{paragraph*.56}%
+\contentsline {paragraph}{洛伦兹规范}{40}{paragraph*.57}%
+\contentsline {paragraph}{规范化的实质和意义}{41}{paragraph*.58}%
+\contentsline {subsection}{\numberline {5.2.2}滞后势的求解}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}辐射条件}{43}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}电基本振子}{44}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}电基本振子的辐射场}{44}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}电基本振子的近、远场辐射特性}{45}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}天线的电参数}{46}{chapter.6}%
+\contentsline {section}{\numberline {6.1}辐射特性参数}{46}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}辐射方向图}{46}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}对称振子的辐射场}{47}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}辐射功率和辐射电阻}{47}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}辐射功率和辐射阻抗}{48}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}天线的有效长度}{48}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}方向系数}{48}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}对称振子的输入阻抗}{49}{subsection.6.1.7}%
+\contentsline {section}{\numberline {6.2}的}{49}{section.6.2}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}缝隙天线和微带天线}{50}{chapter.7}%
+\contentsline {paragraph}{Lone等效原理}{50}{paragraph*.62}%
+\contentsline {section}{\numberline {7.1}理想缝隙天线}{50}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}电磁场的巴俾涅原理和缝隙天线}{50}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}矩形波导缝隙天线}{50}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}波导缝隙天线阵列}{50}{subsection.7.2.1}%
+\contentsline {paragraph}{谐振式缝隙阵}{50}{paragraph*.63}%
+\contentsline {paragraph}{非谐振式缝隙阵}{51}{paragraph*.64}%
+\contentsline {paragraph}{匹配偏斜缝隙阵}{51}{paragraph*.65}%
+\contentsline {subsection}{\numberline {7.2.2}波导缝隙阵的方向性}{51}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}微带天线}{51}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}微带天线的结构}{51}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}微带天线的辐射原理}{51}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}微带天线的分析方法}{51}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}常见宽带天线}{51}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}菱形天线}{51}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}螺旋天线}{51}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}非频变天线}{51}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}引向天线}{52}{subsection.7.4.4}%
+\contentsline {section}{\numberline {7.5}面天线}{53}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}面天线的基本理论和分析方法}{53}{subsection.7.5.1}%
+\contentsline {paragraph}{辅助源法}{53}{paragraph*.66}%
+\contentsline {subsection}{\numberline {7.5.2}等效原理}{53}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}平面口径的绕射问题}{53}{subsection.7.5.3}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}引用}{54}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}省略的证明过程}{54}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}坐标系}{54}{section.a.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}广义正交坐标系}{54}{subsection.a.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}\emph {Lame}系数}{54}{subsection.a.A.2.2}%
+\contentsline {paragraph}{如何求拉梅系数？}{54}{paragraph*.67}%
+\contentsline {section}{\numberline {A.3}公式与定理}{55}{section.a.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}华里士公式}{55}{subsection.a.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}矢量恒等式}{55}{subsection.a.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}斯托克斯公式}{55}{subsection.a.A.3.3}%
+\gdef \@chapapp {\appendixname }
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}习题}{56}{appendix.a.B}%
+\contentsline {section}{\numberline {B.1}作业2-3}{56}{section.a.B.1}%
+\contentsline {paragraph}{1}{56}{paragraph*.68}%
+\contentsline {paragraph}{2}{56}{paragraph*.69}%
+\contentsline {paragraph}{3}{57}{paragraph*.71}%
+\contentsline {section}{\numberline {B.2}作业2-4}{57}{section.a.B.2}%
+\contentsline {paragraph}{1}{57}{paragraph*.73}%
+\contentsline {paragraph}{2}{59}{paragraph*.75}%
+\contentsline {section}{\numberline {B.3}作业2-6}{59}{section.a.B.3}%
+\contentsline {paragraph}{1}{59}{paragraph*.76}%
+\contentsline {paragraph}{2}{60}{paragraph*.77}%
+\contentsline {paragraph}{3}{60}{paragraph*.78}%
+\contentsline {paragraph}{4}{62}{paragraph*.80}%
+\contentsline {paragraph}{5}{63}{paragraph*.82}%
+\contentsline {section}{\numberline {B.4}作业2-7}{66}{section.a.B.4}%
+\contentsline {paragraph}{1}{66}{paragraph*.83}%
+\contentsline {paragraph}{2}{66}{paragraph*.84}%
+\contentsline {paragraph}{3}{67}{paragraph*.85}%
+\contentsline {paragraph}{4}{67}{paragraph*.87}%
+\contentsline {paragraph}{5}{68}{paragraph*.89}%
+\contentsfinish 

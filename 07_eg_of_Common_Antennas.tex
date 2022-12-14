@@ -1,0 +1,234 @@
+% !TeX root = Microwave.tex
+\chapter{缝隙天线和微带天线}
+
+缝隙天线是在金属壁（同轴线、波导管、谐振器）上开窄缝（$<\frac{1}{2}\lambda$）所形成的的天线。
+
+
+    \paragraph{Lone等效原理}
+
+\section{理想缝隙天线}
+
+    \subsection{电磁场的巴俾涅原理和缝隙天线}
+    
+    \begin{theorem}{巴俾涅原理}{巴俾涅原理}
+        巴俾涅原理用于论述互补平面屏（理想导电屏和理想导磁屏）的矢量电磁场问题。
+    \end{theorem}
+
+    \begin{corollary}{电屏和互补磁屏的互补原理}{电屏和互补磁屏的互补原理}
+        ddd    
+    \end{corollary}
+
+    电屏(b)与互补电屏(d)之间的电磁场关系：
+    \begin{subequations}
+        \begin{numcases}{\mbox{}} 
+            \vec{E}_e+Z_0 \vec{H}_d=\vec{E}^i\\
+            \vec{H}_e-Y_0 \vec{E}_d=\vec{H}^i            
+        \end{numcases}
+    \end{subequations}
+
+
+    无限大平板上的$\frac{\lambda}{2}$缝隙天线和半波振子具有互补的场分布。方向图相同，只是E面和H面互换。
+
+
+    缝隙天线的辐射磁场：
+    \begin{equation}
+        \vec{E}_d=\mathrm{j}\frac{120U_M}{Z_0}\frac{\cos(kl\cos\theta)-\cos(kl)}{\sin\theta} \frac{\mathrm{e}^{-\mathrm{j}k r}}{r} \hat{\varphi}
+    \end{equation}
+
+    若令$U_M=0.5 Z_0I_M$，则它们的辐射场相同，因而辐射功率也相同。类比对称振子天线把辐射功率归于波腹电流和辐射电阻，缝隙天线的辐射功率可归于波腹电压和辐射电导：
+    \begin{equation}
+        P_{\varSigma '}=\frac{1}{2}\left\vert U_M\right\vert^2G_{\varSigma '}
+    \end{equation}
+
+
+\section{矩形波导缝隙天线}
+    
+    
+    \subsection{波导缝隙天线阵列}
+    为了增强天线阵列的方向性，在波导上按一定规律开出一系列尺寸相同的缝隙，构成波导缝隙阵列(Slot Array)。
+
+    \paragraph{谐振式缝隙阵}
+    \begin{enumerate}
+    \renewcommand*\labelenumi{\circled{\theenumi}}
+        \item 横向
+        \item 纵向
+    \end{enumerate} 
+
+    \paragraph{非谐振式缝隙阵}
+    若把谐振式缝隙阵的波导的末端改为匹配负载（使波导传输行波），且缝隙的间距不等于$\frac{\lambda}{2}$，则可以构成非谐振式缝隙阵。
+
+    \underline{因为非谐振式缝隙阵是由行波激励的 ，所以能在较宽的频带内保持良好匹配，缺点是效率较低。}
+    由天线阵列的理论，这种线性相位差的阵元构成的缝隙阵列，方向图指向与缝隙面法线的夹角为
+    \begin{equation}
+        \theta_M=\arcsin\left(\frac{\beta \lambda}{2 \pi d}\right)
+    \end{equation}
+    其中$\beta=\frac{2 \pi d}{\lambda_g}$。
+
+
+    \paragraph{匹配偏斜缝隙阵}
+    在窄壁上开斜缝，相邻斜缝之间的距离为$\frac{\lambda}{2}$，
+
+
+
+
+    \subsection{波导缝隙阵的方向性}
+    设$N$为缝隙个数，$\theta$为场点指向与缝隙平面法线的夹角。若各缝隙为等幅激励，则在$z$轴与缝隙平面法线所在的平面内：
+    \begin{equation}
+        f_a(\theta)=f(\theta)\frac{\sin\left[\frac{N}{2}(kd\sin\theta-\beta)\right]}{\sin\left[\frac{1}{2}(kd\sin\theta-\beta)\right]}
+    \end{equation}
+
+
+
+\section{微带天线}
+
+    \subsection{微带天线的结构}
+
+    \subsection{微带天线的辐射原理}
+
+    \subsection{微带天线的分析方法}
+    将矩形微带的两个开路端等效为两个缝隙天线。
+
+
+\section{常见宽带天线}
+
+    \subsection{菱形天线}    
+    
+    \subsection{螺旋天线}
+        
+    \subsection{非频变天线}
+    任何天线，它的性能都是由电尺寸(长度与波长的比值，或者面积与波长的平方的比值)决定的。
+
+    如果天线的所有尺寸和工作波长按同比例变化，则天线的辐射性质保持不变。
+
+    \begin{enumerate}
+    \renewcommand*\labelenumi{\circled{\theenumi}}
+        \item 角度条件。 天线的几何形状只由角度角度决定，与其他尺寸无关。
+        \item 终端效应弱。 天线向外辐射的功率主要在传输线上消耗。决定天线辐射特性的主要部分是载有较大电流的部分，而其延伸段的作用很小，在这种情况下，有限长天线具有与无限长天线相似的电性能。
+    \end{enumerate}
+
+    平面等角螺旋天线的结构和工作原理
+    \begin{subequations}
+        \begin{numcases}{\mbox{双臂四线的极坐标方程}} 
+            r_1=r_0 \mathrm{e}^{\alpha \varphi}\\
+            r_2=r_0 \mathrm{e}^{\alpha (\varphi-\delta)}\\
+            r_3=r_0 \mathrm{e}^{\alpha (\varphi-\pi)}\\
+            r_4=r_0 \mathrm{e}^{\alpha (\varphi-\pi-\delta)}
+        \end{numcases}
+    \end{subequations}
+
+    自补结构是互补的特殊情况，互补天线的阻抗有如下性质：
+    % \begin{equation}
+    %     Z_\mbox{缝隙}Z_\mbox{天线}
+    % \end{equation}
+
+    \begin{itemize}
+        \item 当频率很低时，全臂长比波长小得多时，为线极化（近似看作对称振子）；
+        \item 当频率增大时，最终形成圆极化，极化旋向和螺旋绕向有关。在许多实用情况下，轴比小于等于2的典型值发生在全臂长约为一个波长时。
+    \end{itemize}
+
+
+    阿基米德螺旋天线
+
+    \begin{subequations}
+        \begin{numcases}{\mbox{双臂双线}} 
+            r_1=r_0 \varphi\\
+            r_1=r_0 (\varphi-\pi)
+        \end{numcases}
+    \end{subequations}
+
+
+    对数周期天线。天线的齿形结构按一定比例发生变化。
+
+    对数周期偶极子天线(LPDA)
+    \begin{equation}
+        \tau=\frac{l_n}{l_{n-1}}=\frac{R_n}{R_{n-1}}=\frac{d_n}{d_{n-1}}
+    \end{equation}
+
+    因此
+    \begin{equation}
+        \ln f_n -\ln f_{n-1} =\ln \tau
+    \end{equation}
+    它的非频变特性频率连续变化时，电性能周期性变化。
+
+
+    
+    \subsection{引向天线}
+
+    引向天线，又称为八木天线或波道天线。广泛应用于米波和分米波通信、雷达、电视。
+
+    反射振子和引向振子都是短路无源振子，无源振子的中心固定在与他们垂直的金属杆上，有源振子则与金属杆绝缘。有源振子通常为半波谐振长度。
+
+    作为反射器时，无源短路振子上的电流相位超前于有源振子；作为引向器时，电流相位滞后。可以通过调节其长度改变感应电流的相位差，也可以改变到无源振子的距离改变耦合电流的相位差。
+
+    调节反反射振子和引向振子的长度以及相邻振子间距，使各振子电流相位自反射振子到最后一个引向振子依次滞后，从而实现天线在前向从有源振子到引向振子的方向发生在最大辐射方向
+
+    对于$N$元引向天线，第1个振子为反射振子，第2振子为有源振子，第3到第$N$振子为引向振子，则
+    阵因子取决于各单元间距和电流比
+    \begin{equation}
+        f_a(\theta,\varphi)=\left\vert \sum_{i=1}^{N}\left\vert \frac{I_{M1}}{I_{Mi}}\right\vert \mathrm{e}^{\mathrm{j}\varPhi_i}\right\vert\;,\quad \varPhi_i=(\beta_i-\beta)+kd\sin\theta\cos \varphi
+    \end{equation}
+
+
+
+\section{面天线}
+
+    天线阵虽然可获得很高的方向增益，但存在馈电复杂，功率容量低等缺点。
+
+    面天线的组成：
+    \begin{itemize}
+        \item 初级源：如抛物面天线的喇叭馈源
+        \item 形成方向性的部件：如抛物面反射器
+    \end{itemize}
+
+    \subsection{面天线的基本理论和分析方法}
+
+    面天线的基本问题是确定它的辐射场
+
+    在麦克斯韦方程组中引入等效磁荷和等效磁流，使方程组形式对称。
+
+    在距离无限远处，电磁场
+    \begin{subequations}
+        \begin{numcases}{\mbox{}} 
+            E=B_0\frac{\mathrm{e}^{-\mathrm{j}kr}}{r}\hat{e}_0\\
+            H=\frac{\mu}{\varepsilon}
+        \end{numcases}
+    \end{subequations}
+
+    \paragraph{辅助源法}
+
+    所谓辅助源，首先引入洛伦兹辅助定理。设辅助电流源$J_1^e$，辅助磁流元$J_1^m$
+
+
+    \subsection{等效原理}
+
+    某一区域内产生的电磁场可由
+
+    \begin{subequations}
+        \begin{numcases}{\mbox{}} 
+            \vec{J}_1^e=\hat{n}\times \vec{H}\\
+            \vec{J}_1^m=-\hat{n}\times \vec{E}
+        \end{numcases}
+    \end{subequations}
+
+
+    克希霍夫公式
+    \begin{equation}
+        \vec{E}_p=
+    \end{equation}
+
+    面天线采用\underline{方向系数}，\underline{增益}，\underline{口径利用效率}，\underline{有效面积}和\underline{噪声温度}等参数描述其电性能。
+
+    \begin{enumerate}
+    \renewcommand*\labelenumi{(\theenumi)}
+        \item 方向系数
+        
+        这里主要讨论相同场平面口径天线
+
+        \begin{equation}
+            D=\frac{4 \pi}{\lambda^2}A_e=\frac{4 \pi}{\lambda^2}A\eta
+        \end{equation}
+        \item 口径利用效率
+    \end{enumerate}
+
+
+    \subsection{平面口径的绕射问题}
