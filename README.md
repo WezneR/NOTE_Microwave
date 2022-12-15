@@ -14,6 +14,9 @@ LaTeX Note of Microwave, EM Field and Antenna
 ## 如何编译此工程
 先安装TexLive2021及以上版本。然后安装VS Code和扩展LaTeX Workshop，将以下JSON设置粘贴到VS Code工作区或全局用户设置中：
 
+<details>
+<summary> JSON设置 </summary>
+
 ```json
     "latex-workshop.latex.outDir": "%DIR%/build",
     "latex-workshop.latex.tools": [
@@ -147,6 +150,7 @@ LaTeX Note of Microwave, EM Field and Antenna
     "latex-workshop.synctex.synctexjs.enabled": false,
     "latex-workshop.synctex.afterBuild.enabled": true,
 ```
+</details>
 注意，这份配置中包含了联动 *SumatraPDF* 实现正向搜索的功能，这不是必须的，如果需要，请更改`SumatraPDF.exe`的路径。
 
 程序入口在`Microwave.tex`中。按F5编译。如果您没有为所有用户安装PingFang SC Regular字体，编译会因为找不到字体文件报错。您也可以选择删除这一行

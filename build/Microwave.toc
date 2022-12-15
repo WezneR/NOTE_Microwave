@@ -95,99 +95,100 @@
 \contentsline {subsection}{\numberline {3.1.3}网络性质的S参数描述}{30}{subsection.3.1.3}%
 \contentsline {section}{\numberline {3.2}S参数的变换定理}{30}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}负载变换}{30}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}A参数矩阵转化为S参数矩阵}{30}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}单端口元件}{31}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}匹配元件}{31}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}短路元件}{31}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}失配元件}{31}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}Microwave Resonators Theory 微波谐振腔理论}{32}{chapter.4}%
-\contentsline {section}{\numberline {4.1}微波谐振腔的特性参数}{32}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}谐振波长}{32}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}品质因数}{32}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}等效电导}{32}{subsection.4.1.3}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}天线理论基础}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}电磁场基本方程}{33}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Maxwell方程组}{33}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}本构关系}{34}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}电介质的性质}{35}{subsection.5.1.3}%
-\contentsline {subsubsection}{动态介电常数}{35}{subsubsection*.54}%
-\contentsline {subsection}{\numberline {5.1.4}时变电磁场的边界条件}{35}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}时谐电磁场的复矢量表示}{36}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}坡印廷定理}{37}{subsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.1.7}波动方程}{38}{subsection.5.1.7}%
-\contentsline {section}{\numberline {5.2}势函数及其解（矢位法）}{38}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}势函数及其规范}{39}{subsection.5.2.1}%
-\contentsline {paragraph}{库仑规范：}{39}{paragraph*.56}%
-\contentsline {paragraph}{洛伦兹规范}{40}{paragraph*.57}%
-\contentsline {paragraph}{规范化的实质和意义}{41}{paragraph*.58}%
-\contentsline {subsection}{\numberline {5.2.2}滞后势的求解}{41}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}辐射条件}{43}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}电基本振子}{44}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}电基本振子的辐射场}{44}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}电基本振子的近、远场辐射特性}{45}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}天线的电参数}{46}{chapter.6}%
-\contentsline {section}{\numberline {6.1}辐射特性参数}{46}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}辐射方向图}{46}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}对称振子的辐射场}{47}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}辐射功率和辐射电阻}{47}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}辐射功率和辐射阻抗}{48}{subsection.6.1.4}%
-\contentsline {subsection}{\numberline {6.1.5}天线的有效长度}{48}{subsection.6.1.5}%
-\contentsline {subsection}{\numberline {6.1.6}方向系数}{48}{subsection.6.1.6}%
-\contentsline {subsection}{\numberline {6.1.7}对称振子的输入阻抗}{49}{subsection.6.1.7}%
-\contentsline {section}{\numberline {6.2}的}{49}{section.6.2}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}缝隙天线和微带天线}{50}{chapter.7}%
-\contentsline {paragraph}{Lone等效原理}{50}{paragraph*.62}%
-\contentsline {section}{\numberline {7.1}理想缝隙天线}{50}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}电磁场的巴俾涅原理和缝隙天线}{50}{subsection.7.1.1}%
-\contentsline {section}{\numberline {7.2}矩形波导缝隙天线}{50}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}波导缝隙天线阵列}{50}{subsection.7.2.1}%
-\contentsline {paragraph}{谐振式缝隙阵}{50}{paragraph*.63}%
-\contentsline {paragraph}{非谐振式缝隙阵}{51}{paragraph*.64}%
-\contentsline {paragraph}{匹配偏斜缝隙阵}{51}{paragraph*.65}%
-\contentsline {subsection}{\numberline {7.2.2}波导缝隙阵的方向性}{51}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}微带天线}{51}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}微带天线的结构}{51}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}微带天线的辐射原理}{51}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}微带天线的分析方法}{51}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}常见宽带天线}{51}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}菱形天线}{51}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}螺旋天线}{51}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}非频变天线}{51}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}引向天线}{52}{subsection.7.4.4}%
-\contentsline {section}{\numberline {7.5}面天线}{53}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}面天线的基本理论和分析方法}{53}{subsection.7.5.1}%
-\contentsline {paragraph}{辅助源法}{53}{paragraph*.66}%
-\contentsline {subsection}{\numberline {7.5.2}等效原理}{53}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}平面口径的绕射问题}{53}{subsection.7.5.3}%
-\contentsline {chapter}{\numberline {第一章\hspace {.3em}}引用}{54}{appendix.a.A}%
-\contentsline {section}{\numberline {A.1}省略的证明过程}{54}{section.a.A.1}%
-\contentsline {section}{\numberline {A.2}坐标系}{54}{section.a.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}广义正交坐标系}{54}{subsection.a.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}\emph {Lame}系数}{54}{subsection.a.A.2.2}%
-\contentsline {paragraph}{如何求拉梅系数？}{54}{paragraph*.67}%
-\contentsline {section}{\numberline {A.3}公式与定理}{55}{section.a.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}华里士公式}{55}{subsection.a.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}矢量恒等式}{55}{subsection.a.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}斯托克斯公式}{55}{subsection.a.A.3.3}%
+\contentsline {subsection}{\numberline {3.2.2}反射系数变换}{30}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}A参数矩阵转化为S参数矩阵}{30}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}单端口元件}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}匹配元件}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}短路元件}{32}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}失配元件}{32}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}Microwave Resonators Theory 微波谐振腔理论}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}微波谐振腔的特性参数}{33}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}谐振波长}{33}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}品质因数}{33}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}等效电导}{33}{subsection.4.1.3}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}天线理论基础}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}电磁场基本方程}{34}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Maxwell方程组}{34}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}本构关系}{35}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}电介质的性质}{36}{subsection.5.1.3}%
+\contentsline {subsubsection}{动态介电常数}{36}{subsubsection*.55}%
+\contentsline {subsection}{\numberline {5.1.4}时变电磁场的边界条件}{36}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}时谐电磁场的复矢量表示}{37}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}坡印廷定理}{38}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}波动方程}{39}{subsection.5.1.7}%
+\contentsline {section}{\numberline {5.2}势函数及其解（矢位法）}{39}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}势函数及其规范}{40}{subsection.5.2.1}%
+\contentsline {paragraph}{库仑规范：}{40}{paragraph*.57}%
+\contentsline {paragraph}{洛伦兹规范}{41}{paragraph*.58}%
+\contentsline {paragraph}{规范化的实质和意义}{42}{paragraph*.59}%
+\contentsline {subsection}{\numberline {5.2.2}滞后势的求解}{42}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}辐射条件}{44}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}电基本振子}{45}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}电基本振子的辐射场}{45}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}电基本振子的近、远场辐射特性}{46}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}天线的电参数}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}辐射特性参数}{47}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}辐射方向图}{47}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}对称振子的辐射场}{48}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}辐射功率和辐射电阻}{48}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}辐射功率和辐射阻抗}{49}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}天线的有效长度}{49}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}方向系数}{49}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}对称振子的输入阻抗}{50}{subsection.6.1.7}%
+\contentsline {section}{\numberline {6.2}的}{50}{section.6.2}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}缝隙天线和微带天线}{51}{chapter.7}%
+\contentsline {paragraph}{Lone等效原理}{51}{paragraph*.63}%
+\contentsline {section}{\numberline {7.1}理想缝隙天线}{51}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}电磁场的巴俾涅原理和缝隙天线}{51}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}矩形波导缝隙天线}{51}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}波导缝隙天线阵列}{51}{subsection.7.2.1}%
+\contentsline {paragraph}{谐振式缝隙阵}{51}{paragraph*.64}%
+\contentsline {paragraph}{非谐振式缝隙阵}{52}{paragraph*.65}%
+\contentsline {paragraph}{匹配偏斜缝隙阵}{52}{paragraph*.66}%
+\contentsline {subsection}{\numberline {7.2.2}波导缝隙阵的方向性}{52}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}微带天线}{52}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}微带天线的结构}{52}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}微带天线的辐射原理}{52}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}微带天线的分析方法}{52}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}常见宽带天线}{52}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}菱形天线}{52}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}螺旋天线}{52}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}非频变天线}{52}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}引向天线}{53}{subsection.7.4.4}%
+\contentsline {section}{\numberline {7.5}面天线}{54}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}面天线的基本理论和分析方法}{54}{subsection.7.5.1}%
+\contentsline {paragraph}{辅助源法}{54}{paragraph*.67}%
+\contentsline {subsection}{\numberline {7.5.2}等效原理}{54}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}平面口径的绕射问题}{54}{subsection.7.5.3}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}引用}{55}{appendix.a.A}%
+\contentsline {section}{\numberline {A.1}省略的证明过程}{55}{section.a.A.1}%
+\contentsline {section}{\numberline {A.2}坐标系}{55}{section.a.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}广义正交坐标系}{55}{subsection.a.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}\emph {Lame}系数}{55}{subsection.a.A.2.2}%
+\contentsline {paragraph}{如何求拉梅系数？}{55}{paragraph*.68}%
+\contentsline {section}{\numberline {A.3}公式与定理}{56}{section.a.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}华里士公式}{56}{subsection.a.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}矢量恒等式}{56}{subsection.a.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}斯托克斯公式}{56}{subsection.a.A.3.3}%
 \gdef \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}习题}{56}{appendix.a.B}%
-\contentsline {section}{\numberline {B.1}作业2-3}{56}{section.a.B.1}%
-\contentsline {paragraph}{1}{56}{paragraph*.68}%
-\contentsline {paragraph}{2}{56}{paragraph*.69}%
-\contentsline {paragraph}{3}{57}{paragraph*.71}%
-\contentsline {section}{\numberline {B.2}作业2-4}{57}{section.a.B.2}%
-\contentsline {paragraph}{1}{57}{paragraph*.73}%
-\contentsline {paragraph}{2}{59}{paragraph*.75}%
-\contentsline {section}{\numberline {B.3}作业2-6}{59}{section.a.B.3}%
-\contentsline {paragraph}{1}{59}{paragraph*.76}%
-\contentsline {paragraph}{2}{60}{paragraph*.77}%
-\contentsline {paragraph}{3}{60}{paragraph*.78}%
-\contentsline {paragraph}{4}{62}{paragraph*.80}%
-\contentsline {paragraph}{5}{63}{paragraph*.82}%
-\contentsline {section}{\numberline {B.4}作业2-7}{66}{section.a.B.4}%
-\contentsline {paragraph}{1}{66}{paragraph*.83}%
-\contentsline {paragraph}{2}{66}{paragraph*.84}%
-\contentsline {paragraph}{3}{67}{paragraph*.85}%
-\contentsline {paragraph}{4}{67}{paragraph*.87}%
-\contentsline {paragraph}{5}{68}{paragraph*.89}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}习题}{57}{appendix.a.B}%
+\contentsline {section}{\numberline {B.1}作业2-3}{57}{section.a.B.1}%
+\contentsline {paragraph}{1}{57}{paragraph*.69}%
+\contentsline {paragraph}{2}{57}{paragraph*.70}%
+\contentsline {paragraph}{3}{58}{paragraph*.72}%
+\contentsline {section}{\numberline {B.2}作业2-4}{58}{section.a.B.2}%
+\contentsline {paragraph}{1}{58}{paragraph*.74}%
+\contentsline {paragraph}{2}{60}{paragraph*.76}%
+\contentsline {section}{\numberline {B.3}作业2-6}{60}{section.a.B.3}%
+\contentsline {paragraph}{1}{60}{paragraph*.77}%
+\contentsline {paragraph}{2}{61}{paragraph*.78}%
+\contentsline {paragraph}{3}{61}{paragraph*.79}%
+\contentsline {paragraph}{4}{63}{paragraph*.81}%
+\contentsline {paragraph}{5}{64}{paragraph*.83}%
+\contentsline {section}{\numberline {B.4}作业2-7}{67}{section.a.B.4}%
+\contentsline {paragraph}{1}{67}{paragraph*.84}%
+\contentsline {paragraph}{2}{67}{paragraph*.85}%
+\contentsline {paragraph}{3}{68}{paragraph*.86}%
+\contentsline {paragraph}{4}{68}{paragraph*.88}%
+\contentsline {paragraph}{5}{69}{paragraph*.90}%
 \contentsfinish 

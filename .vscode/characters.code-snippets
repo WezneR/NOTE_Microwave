@@ -117,5 +117,14 @@
 		"prefix": "note",
 		"scope": "latex"
 	},
+	"tcb_proof":{
+		"body": [
+			"\\begin{tcbproof}\\begin{proof}",
+			"\t$1",
+			"\\end{proof}\\end{tcbproof}", 
+		],
+		"scope": "latex",
+		"prefix": "proof"
+	},
 
 }

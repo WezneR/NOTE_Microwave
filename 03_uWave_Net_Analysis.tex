@@ -1,6 +1,7 @@
 % !TeX root = Microwave.tex
 \chapter{Microwave Elements and Networks 微波元件与网络分析}
-\section{S参数的引入}
+\setlength{\parindent}{2\ccwd}
+\section{S参数的引入}\label{Sec: S参数的引入}
 \begin{equation*}
     \begin{array}{cc}
         \makecell[cc]{\mbox{A参数}\begin{cases}
@@ -135,25 +136,158 @@
             \begin{equation}
                 S_{ij}=S_{ji}\quad\mbox{（$i$端口与$j$端口互易）}
             \end{equation}
-            \item 反射系数转换性质
-            \begin{equation}
-                \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}
-            \end{equation}
-            其中，$\varGamma_L=\frac{a_2}{b_2}$为负载反射系数
+
         \end{enumerate}
 
 
 \section{S参数的变换定理}
+
     \subsection{负载变换}
+
+    \subsection{反射系数变换}
+    反射系数在经过一个由S参数描述的网络之后，产生如下变换：
+    \begin{equation}
+        \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}
+    \end{equation}
+    其中，$\varGamma_L=\frac{a_2}{b_2}$为负载反射系数    
     \subsection{A参数矩阵转化为S参数矩阵}
     % \paragraph{}
-    
-    归一化后的$\bm{A}$参数矩阵转$\bm{S}$参数矩阵:
+    需要先对A参数矩阵做阻抗归一化。最一般的情况如\hyperref[Fig: A参数矩阵的阻抗归一化]{图\ref*{Fig: A参数矩阵的阻抗归一化}}所示，网络的两个端口具有不同的特性阻抗。
+
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{tikzpicture}[
+                    circuit ee IEC,
+                    % x=3cm,y=2cm,
+                    semithick,
+                    every info/.style={font=\footnotesize},
+                    small circuit symbols,
+                    % set resistor graphic=var resistor IEC graphic,
+                    % set diode graphic=var diode IEC graphic,
+                    set make contact graphic = var make contact IEC graphic,
+                    circuit declare symbol= module, set module graphic=
+                        {draw, shape=rectangle, minimum width=3cm, minimum height=3cm, text width = 2cm, align = flush center, fill=white},
+                    ]
+                %%
+                \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=left:{\color{blue}$-$}] (P1far_N) at (-3.5,-1) {};
+                \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=left:{\color{blue}$+$}] (P1far_P) at (-3.5,1) {};
+                \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=right:{\color{blue}$-$}] (P2far_N) at (3.5,-1) {};
+                \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=right:{\color{blue}$+$}] (P2far_P) at (3.5,1) {};
+                
+                \node [contact] (P1near_N) at (-1.5,-1) {};
+                \node [contact] (P1near_P) at (-1.5,1) {};
+                \node [contact] (P2near_N) at (1.5,-1) {};
+                \node [contact] (P2near_P) at (1.5,1) {};
+
+                \draw (P1far_P) to (P1near_P);
+                \draw (P1far_N) to (P1near_N);
+                
+                \draw (P2far_P) to (P2near_P);
+                \draw (P2far_N) to (P2near_N);
+
+                % \node [module] (网络A) at (0,0) {$\displaystyle \bm{A}=\qquad\qquad \begin{bmatrix}A_{11}&A_{12}\\ A_{21}&A_{22}\end{bmatrix}$};
+                \node [module] (网络A) at (0,0) {$[\bm{A}]$};
+
+                \draw [draw=none, fill=lightgray, semitransparent] (P1near_N)++(0,-0.5) rectangle ++(-2.6,3);
+                \draw [draw=none, fill=gray, semitransparent] (P2near_N)++(0,-0.5) rectangle ++(2.6,3);
+
+                \draw[->, blue] (P1far_P) ++(0.8cm,0) -- node[above]{$i_1$} ++(0.8cm,0);
+                \draw[->, blue] (P2near_P) ++(0.8cm,0) -- node[above]{$i_2$} ++(0.8cm,0);
+                
+                \draw (-3.8,0) node[label=right:{$\quad Z_{01}$}] {\color{blue} $u_1$};
+                \draw (3.8,0) node[label=left:{$Z_{02}\quad $}] {\color{blue} $u_2$};
+
+                % \draw (8,0) node[] {$\displaystyle \begin{bmatrix}
+                %     u_1\\i_1
+                % \end{bmatrix}=\bm{A}\begin{bmatrix}
+                %     u_2\\i_2
+                % \end{bmatrix}$};
+            \end{tikzpicture}
+        \end{center}
+        \caption{\kaishu A参数矩阵的阻抗归一化}\label{Fig: A参数矩阵的阻抗归一化}
+    \end{figure}
+
+    \begin{theorem}{A参数矩阵的阻抗归一化}{A参数矩阵的阻抗归一化}
+        一般地，记一个二端口网络的A参数矩阵为：
+        \begin{equation*}
+            \bm{A}=\begin{bmatrix}
+                A_{11}&A_{12}\\
+                A_{21}&A_{22}
+            \end{bmatrix}
+        \end{equation*}
+        记其阻抗归一化A参数矩阵为$\bm{a}$，
+        \begin{equation*}
+            \bm{a}=\begin{bmatrix}
+                a_{11}&a_{12}\\
+                a_{21}&a_{22}
+            \end{bmatrix}
+        \end{equation*}
+        则有：
+        \begin{equation}
+            \begin{bmatrix}
+                a{11}&a_{12}\\
+                a_{21}&a_{22}
+            \end{bmatrix}    
+            =\begin{bmatrix}
+                \dfrac{\sqrt{Z_{02}}A_{11}}{\sqrt{Z_{01}}} & \dfrac{A_{12}}{\sqrt{Z_{01}Z_{02}}}\\
+                \sqrt{Z_{01}Z_{02}}A_{21} & \dfrac{\sqrt{Z_{01}}A_{22}}{\sqrt{Z_{02}}}
+            \end{bmatrix}
+        \end{equation}
+    \end{theorem}
+
+    \begin{tcbproof}\begin{proof}
+        根据A参数矩阵的定义和阻抗归一化波的概念就可以推导出阻抗归一化A参数矩阵的表达式。将归一化电压和电流表示为：
+        \begin{equation}
+            \begin{aligned}
+                \begin{bmatrix}
+                    \bar{u}_1\\
+                    \bar{i}_1
+                \end{bmatrix}
+                &=\begin{bmatrix}
+                    \dfrac{u_1}{\sqrt{Z_{01}}}\\
+                    i_1\sqrt{Z_{01}}
+                \end{bmatrix}\\
+                &=\begin{bmatrix}
+                    \dfrac{A_{11}}{\sqrt{Z_{01}}}u_2+\dfrac{A_{12}}{Z_{01}}i_2\\
+                    A_{21}\sqrt{Z_{01}}u_2+A_{22}\sqrt{Z_{01}}i_2
+                \end{bmatrix}\\
+                &=\begin{bmatrix}
+                    \dfrac{\sqrt{Z_{02}}A_{11}}{\sqrt{Z_{01}}}\bar{u}_2+\dfrac{A_{12}}{\sqrt{Z_{01}Z_{02}}}\bar{i}_2\\
+                    A_{21}\sqrt{Z_{01}Z_{02}}\bar{u}_2+\dfrac{\sqrt{Z_{01}}A_{22}}{\sqrt{Z_{02}}}\bar{i}_2
+                \end{bmatrix}\\
+                &=\begin{bmatrix}
+                    \dfrac{\sqrt{Z_{02}}A_{11}}{\sqrt{Z_{01}}} & \dfrac{A_{12}}{\sqrt{Z_{01}Z_{02}}}\\
+                    A_{21}\sqrt{Z_{01}Z_{02}} & \dfrac{\sqrt{Z_{01}}A_{22}}{\sqrt{Z_{02}}}
+                \end{bmatrix}
+                \begin{bmatrix}
+                    \bar{u}_2\\
+                    \bar{i}_2
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    a_{11}&a_{12}\\
+                    a_{21}&a_{22}
+                \end{bmatrix}
+                \begin{bmatrix}
+                    \bar{u}_2\\
+                    \bar{i}_2                
+                \end{bmatrix}
+                =\bm{a}
+                \begin{bmatrix}
+                    \bar{u}_2\\
+                    \bar{i}_2                
+                \end{bmatrix}
+            \end{aligned}
+        \end{equation}
+        其中$\bm{a}$表示阻抗归一化的A参数矩阵。        
+    \end{proof}\end{tcbproof}
+
+
+    归一化后的A参数矩阵转S参数矩阵:
     \begin{equation}
-        \bm{S}=\frac{1}{A_{11}+A_{12}+A_{21}+A_{22}}
+        \bm{S}=\frac{1}{a_{11}+a_{12}+a_{21}+a_{22}}
         \begin{bmatrix}
-            A_{11}+A_{12}-A_{21}-A_{22}&2|\bm{A}|\\
-            2&A_{12}+A_{22}-A_{21}-A_{11}
+            a_{11}+a_{12}-a_{21}-a_{22}&2|\bm{a}|\\
+            2&a_{12}+a_{22}-a_{21}-a_{11}
         \end{bmatrix}
     \end{equation}
 
