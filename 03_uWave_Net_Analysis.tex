@@ -125,7 +125,7 @@
                 \end{aligned}\right.
             \end{equation}
             这是一个欠定方程组，可以推知：
-            \begin{subequations}
+            \begin{subequations}\label{Equ: 无耗二端口网络的S参数}
                 \begin{numcases}{\mbox{}}
                     |S_{11}|=|S_{22}| \\
                     |S_{12}|=|S_{21}| \\
@@ -140,18 +140,7 @@
         \end{enumerate}
 
 
-\section{S参数的变换定理}
-
-    \subsection{负载变换}
-
-    \subsection{反射系数变换}
-    反射系数在经过一个由S参数描述的网络之后，产生如下变换：
-    \begin{equation}
-        \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}
-    \end{equation}
-    其中，$\varGamma_L=\frac{a_2}{b_2}$为负载反射系数    
     \subsection{A参数矩阵转化为S参数矩阵}
-    % \paragraph{}
     需要先对A参数矩阵做阻抗归一化。最一般的情况如\hyperref[Fig: A参数矩阵的阻抗归一化]{图\ref*{Fig: A参数矩阵的阻抗归一化}}所示，网络的两个端口具有不同的特性阻抗。
 
     \begin{figure}[h!]
@@ -197,17 +186,14 @@
                 \draw (-3.8,0) node[label=right:{$\quad Z_{01}$}] {\color{blue} $u_1$};
                 \draw (3.8,0) node[label=left:{$Z_{02}\quad $}] {\color{blue} $u_2$};
 
-                % \draw (8,0) node[] {$\displaystyle \begin{bmatrix}
-                %     u_1\\i_1
-                % \end{bmatrix}=\bm{A}\begin{bmatrix}
-                %     u_2\\i_2
-                % \end{bmatrix}$};
             \end{tikzpicture}
         \end{center}
         \caption{\kaishu A参数矩阵的阻抗归一化}\label{Fig: A参数矩阵的阻抗归一化}
     \end{figure}
 
-    \begin{theorem}{A参数矩阵的阻抗归一化}{A参数矩阵的阻抗归一化}
+    \begin{theorem}
+    {A参数矩阵的阻抗归一化}
+    {A参数矩阵的阻抗归一化}
         一般地，记一个二端口网络的A参数矩阵为：
         \begin{equation*}
             \bm{A}=\begin{bmatrix}
@@ -225,7 +211,7 @@
         则有：
         \begin{equation}
             \begin{bmatrix}
-                a{11}&a_{12}\\
+                a_{11}&a_{12}\\
                 a_{21}&a_{22}
             \end{bmatrix}    
             =\begin{bmatrix}
@@ -281,18 +267,366 @@
         其中$\bm{a}$表示阻抗归一化的A参数矩阵。        
     \end{proof}\end{tcbproof}
 
+    \begin{theorem}
+    {A参数矩阵转化为S参数矩阵}
+    {A参数矩阵转化为S参数矩阵}
+        归一化后的A参数矩阵转S参数矩阵:
+        \begin{equation}
+            \bm{S}=\frac{1}{a_{11}+a_{12}+a_{21}+a_{22}}
+            \begin{bmatrix}
+                a_{11}+a_{12}-a_{21}-a_{22}&2|\bm{a}|\\
+                2&a_{12}+a_{22}-a_{21}-a_{11}
+            \end{bmatrix}
+        \end{equation}
+    \end{theorem}
+    \begin{tcbproof}\begin{proof}
+        A参数矩阵同二端口网络的S参数矩阵的关系，本质上就是电压电流同归一化入射波和散射波的关系：
+        \begin{subequations}\label{Equ: 电压电流同归一化入射波和散射波的关系}
+            \begin{numcases}{\mbox{}} 
+                \begin{bmatrix}
+                    \bar{u}_1\\
+                    \bar{i}_1
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    a_1+b_1\\
+                    a_1-b_1
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    1&1\\
+                    1&-1
+                \end{bmatrix}
+                \begin{bmatrix}
+                    a_1\\
+                    b_1
+                \end{bmatrix}\\
+                \begin{bmatrix}
+                    \bar{u}_2\\
+                    \bar{i}_2
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    a_2+b_2\\
+                    -(a_2-b_2)
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    1&1\\
+                    -1&1
+                \end{bmatrix}
+                \begin{bmatrix}
+                    a_2\\
+                    b_2
+                \end{bmatrix}
+            \end{numcases}
+        \end{subequations}
+        注意电流的方向为\hyperref[Fig: A参数矩阵的阻抗归一化]{图\ref*{Fig: A参数矩阵的阻抗归一化}}中标注的方向。
 
-    归一化后的A参数矩阵转S参数矩阵:
+        把\hyperref[Equ: 电压电流同归一化入射波和散射波的关系]{式(\ref*{Equ: 电压电流同归一化入射波和散射波的关系})}带入归一化A参数矩阵的定义式中，再整理成$\bm{b}=\bm{S}\bm{a}$的形式，就可以得证。
+
+        反过来，把$a,b$用电压和电流表示，带入到$\bm{b}=\bm{S}\bm{a}$中，再整理成A参数矩阵定义式的形式，就可以得到S参数矩阵转A参数矩阵的方式。
+    \end{proof}\end{tcbproof}
+
+    \subsection{输入阻抗与S参数的关系}
+    根据$a,b$和电压电流的关系，不仅可以导出A参数矩阵和S参数矩阵的关系，还可以推导出输入阻抗和S参数的关系。
+
+    仍以\hyperref[Fig: A参数矩阵的阻抗归一化]{图\ref*{Fig: A参数矩阵的阻抗归一化}}所示的\circled{1}端口为例，
     \begin{equation}
-        \bm{S}=\frac{1}{a_{11}+a_{12}+a_{21}+a_{22}}
-        \begin{bmatrix}
-            a_{11}+a_{12}-a_{21}-a_{22}&2|\bm{a}|\\
-            2&a_{12}+a_{22}-a_{21}-a_{11}
-        \end{bmatrix}
+        Z_{in}=\frac{u_1}{i_1}
+        =\frac{(a_1+b_1)\sqrt{Z_{01}}}{(a_1-b_1)/\sqrt{Z_{01}}}
+        =Z_{01}\frac{a_1+b_1}{a_1-b_1}
     \end{equation}
 
-\section{单端口元件}
-    \subsection{匹配元件}
-    \subsection{短路元件}
-    \subsection{失配元件}
+    对于一般性的微波网络而言，$b_1$可能由各个端口入射波贡献，上式无法继续化简。
 
+    但是对于端口间高度隔离的网络，有$S_{12}=S_{13}=\cdots=S_{1n}=0$，此时有$b_1=S_{11}a_1$。那么，
+    \begin{equation}
+        Z_{in}=Z_{01}\frac{1+S_{11}}{1-S_{11}}
+    \end{equation}
+
+    换言之，对于任何一个微波网络，如果从它的其他所有端口入射的能量都不能耦合或者输出到\circled{$p$}端口，（意味着该网络的S参数矩阵的第$p$行除了$S_{pp}外$外都是0或极小）那么，\circled{$p$}端口的输入阻抗只与$S_{pp}$以及特性阻抗有关。否则，该端口的阻抗匹配将会十分复杂。
+
+
+\section{二端口元件}
+二端口元件（双端口元件）是应用最多的一种元件。
+\begin{figure}[h!]
+    \begin{center}
+        \begin{tikzpicture}[
+                circuit ee IEC,
+                % x=3cm,y=2cm,
+                semithick,
+                every info/.style={font=\footnotesize},
+                small circuit symbols,
+                % set resistor graphic=var resistor IEC graphic,
+                % set diode graphic=var diode IEC graphic,
+                set make contact graphic = var make contact IEC graphic,
+                circuit declare symbol= module, set module graphic=
+                    {draw, shape=rectangle, minimum width=4cm, minimum height=2cm, text width = 2cm, align = flush center, fill=white},
+                ]
+
+            \node [module] (网络A) at (0,0) {二端口网络};
+
+            \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P1far_N) at (-4.0,-0.8) {};
+            \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P1far_P) at (-4.0,0.8) {};
+            \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P2far_N) at (4.0,-0.8) {};
+            \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P2far_P) at (4.0,0.8) {};
+            
+            \node [] (P1near_N) at (-1.9,-0.8) {};
+            \node [] (P1near_P) at (-1.9,0.8) {};
+            \node [] (P2near_N) at (1.9,-0.8) {};
+            \node [] (P2near_P) at (1.9,0.8) {};
+
+            \draw (P1far_P) to (P1near_P);
+            \draw (P1far_N) to (P1near_N);
+            \draw (P2far_P) to (P2near_P);
+            \draw (P2far_N) to (P2near_N);
+
+            \draw[->, color=red!67] (P1far_P) ++(0.5cm,0.25cm) -- node[above]{$a_1$} ++(0.9cm,0);
+            \draw[->, color=blue!67] (P2near_P) ++(0.5cm,0.25cm) -- node[above]{$b_2$} ++(0.9cm,0);
+            \draw[->, color=blue!67] (P1near_N) ++(-0.5cm,-0.25cm) -- node[below]{$b_1$} ++(-0.9cm,0);
+            \draw[->, color=red!67] (P2far_N) ++(-0.5cm,-0.25cm) -- node[below]{$a_2$} ++(-0.9cm,0);
+            
+            \draw (-3,0) node[] {\circled{1}};
+            \draw (+3,0) node[] {\circled{2}};
+
+            \node at (8,0) {$\displaystyle \begin{bmatrix}
+                    b_1\\b_2
+                \end{bmatrix}=\begin{bmatrix}
+                    S_{11}&S_{12}\\
+                    S_{21}&S_{22}
+                \end{bmatrix}\begin{bmatrix}
+                    a_1\\a_2
+                \end{bmatrix}$};
+        \end{tikzpicture}
+    \end{center}
+    \caption{\kaishu 二端口元件}\label{Fig: 二端口元件}
+\end{figure}
+
+在讨论二端口元件的性质时，我们假设\circled{1}是输入端口，靠近源端；\circled{2}是输出端口，靠近负载。
+
+    \subsection{二端口网络的负载变换}
+    \begin{theorem}
+    {二端口网络的反射系数变换}
+    {二端口网络的反射系数变换}
+        将二端口网络的端口\circled{2}接一负载网络，负载的输入阻抗为$Z_L$，反射系数为$\varGamma_L$，则在经过一个由S参数描述的二端口网络之后，产生如下变换：
+        \begin{equation}
+            \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}
+        \end{equation}
+        其中，$\varGamma_{in}=\frac{b_1}{a_1}$为从端口\circled{1}看向负载的反射系数，$\varGamma_L=\frac{a_2}{b_2}$为负载反射系数。        
+    \end{theorem}
+
+
+
+    \begin{tcbproof}
+    % \begin{proof}
+        关键问题在于理解
+        \begin{subequations}
+            \begin{numcases}{} 
+                \varGamma_{in}=\frac{b_1}{a_1}\\
+                \varGamma_L=\frac{a_2}{b_2}
+            \end{numcases}
+        \end{subequations}
+        剩下的推导过程只需要将$\bm{b}=\bm{S}\bm{a}$带入上面两个方程，解出$a_1$即可。
+
+        于是，为什么反射系数可以用归一化入射波$a$和散射波$b$表示？
+
+        \begin{wrapfigure}[7]{r}{0.5\textwidth}
+            \vspace{-20pt}
+            \begin{center}
+                \begin{tikzpicture}[
+                        scale=0.7,
+                        circuit ee IEC,
+                        % x=3cm,y=2cm,
+                        semithick,
+                        every info/.style={font=\footnotesize},
+                        small circuit symbols,
+                        % set resistor graphic=var resistor IEC graphic,
+                        % set diode graphic=var diode IEC graphic,
+                        circuit declare symbol= module, set module graphic=
+                            {draw, shape=rectangle, minimum width=1.4cm, minimum height=1.4cm, text width = 1.4cm, align = flush center, fill=white},
+                        ]
+
+                    \node [module] (网络A) at (0,0) {$[\bm{S}]$};
+
+                    \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=left:{\color{gray!50!black}$-$}] (P1far_N) at (-2.9,-0.8) {};
+                    \node [circle, draw=black, inner sep=1pt, minimum size=3pt, label=left:{\color{gray!50!black}$+$}] (P1far_P) at (-2.9,0.8) {};
+
+                    \node [inner sep=0, outer sep=0] (P2far_N) at (3.4,-0.8) {};
+                    % \node [] (P2far_P) at (2.9,0.8) {};
+                    
+                    \node [] (P1near_N) at (-0.85,-0.8) {};
+                    \node [] (P1near_P) at (-0.85,0.8) {};
+                    \node [] (P2near_N) at (0.85,-0.8) {};
+                    \node [] (P2near_P) at (0.85,0.8) {};
+
+
+                    \draw (P1far_P) to (P1near_P);
+                    \draw (P1far_N) to (P1near_N);
+                    % \draw (P2far_P) to (P2near_P);
+                    % \draw (P2far_N) to (P2near_N);
+
+
+                    % \draw (P2near_N) to  (P2far_N) to [resistor={fill=white}] ++(up:1.6) to  (P2near_P) ;
+                    \draw (P2near_N) to [resistor={circuit symbol size=width 5 height 0.6}] ++(right:3.3) to [resistor={circuit symbol size=width 3 height 2, fill=white, info=center:L}] ++(up:1.6) to [resistor={circuit symbol size=width 5 height 0.6}] (P2near_P) ;
+
+
+                    \draw[->, color=red!67] (P1far_P) ++(0.5cm,-0.25cm) -- node[below]{$a_1$} ++(0.9cm,0);
+                    \draw[->, color=blue!67] (P2near_P) ++(0.5cm,+0.25cm) -- node[above]{$b_2$} ++(0.9cm,0);
+                    \draw[->, color=blue!67] (P1near_N) ++(-0.5cm,-0.25cm) -- node[below]{$b_1$} ++(-0.9cm,0);
+                    \draw[->, color=red!67] (P2near_N) ++(1.4cm,+0.25cm) -- node[above]{$a_2$} ++(-0.9cm,0);
+
+                    \draw[->,>=stealth] (P1far_P) ++(0.5cm,0) -- node[above, near end]{\color{gray!50!black} $i_1$} ++(0.5cm,0);
+                    \draw (-3.8,0) node[] {\color{gray!50!black} $u_1$};
+                    
+                    \path (P1far_N) ++ (-0.5em,-1.2em) node[anchor=north, color=gray!50!black] (GammaIN){$\varGamma_{in}$};
+                    \draw[-{[sep=3pt]>}, >=stealth, inner sep=3pt, color=gray!50!black] ([color=gray!50!black]GammaIN.north) |- ++(0.8,1.2);
+
+                    \path (P2far_N) ++ (0,-1.2em) node[anchor=north, color=gray!50!black] (GammaIN){$\varGamma_L$};
+                    \draw[-{[sep=3pt]>}, >=stealth, inner sep=3pt, color=gray!50!black] ([color=gray!50!black]GammaIN.north) |- ++(0.4,1.2);
+
+                    \end{tikzpicture}                 
+            \end{center}
+            \vspace{-20pt}
+            \caption{用散射波和入射波表示反射系数}\label{Fig: 用散射波和入射波表示反射系数}
+        \end{wrapfigure} 
+
+        根据反射系数定义，
+        \begin{equation}
+            \varGamma_{in}=\frac{u_1^-}{u_1^+}
+        \end{equation}
+        或者根据\hyperref[Equ: Reflection Coefficient of current at z']{式(\ref*{Equ: Reflection Coefficient of current at z'})}：
+        \begin{equation}
+            \varGamma_{in}=\frac{-i_1^-}{i_1^+}
+        \end{equation}
+        注意，$u_1$和$i_1$表示网络端口处的电压和电流，参考面没有选在传输线上。加$+,-$上标也是表示在端口处的入射分量和反射分量。那么，根据归一化入射波和散射波的定义，$a_1=\frac{u_1^+}{\sqrt{Z_0}}={i_1^+}{\sqrt{Z_0}},b_1=\frac{u_1^-}{\sqrt{Z_0}}=-{i_1^-}{\sqrt{Z_0}}$。
+        所以
+        \begin{equation}
+            \varGamma_{in}
+            =\frac{u_1^-/\sqrt{Z_0}}{u_1^+/\sqrt{Z_0}}
+            =\frac{\frac{u_1^-}{\sqrt{Z_0}}-i_1^-\sqrt{Z_0}}{\frac{u_1^+}{\sqrt{Z_0}}+i_1^+\sqrt{Z_0}}
+            =\frac{b_1}{a_1}
+        \end{equation}
+
+        类似地，如果二端口网络的输出端口直接和负载相连，可以得到
+        \begin{equation}
+            \varGamma_L
+            =\frac{u_2^-/\sqrt{Z_0}}{u_2^+/\sqrt{Z_0}}
+            =\frac{a_2}{b_2}
+        \end{equation}
+
+        但是，如果输出端口到负载之间有一段长$\Delta z$的传输线，如\hyperref[Fig: 用散射波和入射波表示反射系数]{图\ref*{Fig: 用散射波和入射波表示反射系数}}所示，则上式就不再成立。
+
+        因为$\varGamma_L$定义的是负载处的反射电压比上负载处的前向电压，而$a_2$和$b_2$则是端口处的入射波和散射波。
+        此时关系变为：
+        \begin{equation}
+            \varGamma_L
+            =\frac{u_2^-\mathrm{e}^{\gamma \Delta z}}{u_2^+\mathrm{e}^{-\gamma \Delta z}}
+            =\frac{a_2}{b_2}\mathrm{e}^{2\gamma \Delta z}
+        \end{equation}
+        其中，$\gamma$为传输线的传播常数。
+    % \end{proof}
+    \end{tcbproof}
+
+    \begin{corollary}
+    {无耗二端口网络的匹配定理}
+    {无耗二端口网络的匹配定理}
+        一个无耗的二端口网络，输出端口接一反射系数$\varGamma_L$的负载。则当且仅当
+        \begin{equation}
+            S_{22}=\varGamma_L^*
+        \end{equation}
+        时，从该网络的输入端口看向负载，阻抗匹配。
+    \end{corollary}
+
+    \begin{tcbproof}
+        \begin{wrapfigure}[4]{r}{0.5\textwidth}
+            \vspace{-20pt}
+            \begin{center}
+                \begin{tikzpicture}[
+                        scale=0.7,
+                        circuit ee IEC,
+                        % x=3cm,y=2cm,
+                        semithick,
+                        every info/.style={font=\footnotesize},
+                        small circuit symbols,
+                        % set resistor graphic=var resistor IEC graphic,
+                        % set diode graphic=var diode IEC graphic,
+                        circuit declare symbol= module, set module graphic=
+                            {draw, shape=rectangle, minimum width=1.4cm, minimum height=1.4cm, text width = 1.4cm, align = flush center, fill=white},
+                        ]
+
+                    \node [module] (网络A) at (0,0) {$[\bm{S}]$};
+
+                    \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P1far_N) at (-2.9,-0.8) {};
+                    \node [circle, draw=black, inner sep=1pt, minimum size=3pt] (P1far_P) at (-2.9,0.8) {};
+
+                    \node [inner sep=0, outer sep=0] (P2far_N) at (3.4,-0.8) {};
+                    % \node [] (P2far_P) at (2.9,0.8) {};
+                    
+                    \node [] (P1near_N) at (-0.85,-0.8) {};
+                    \node [] (P1near_P) at (-0.85,0.8) {};
+                    \node [] (P2near_N) at (0.85,-0.8) {};
+                    \node [] (P2near_P) at (0.85,0.8) {};
+
+
+                    \draw (P1far_P) to (P1near_P);
+                    \draw (P1far_N) to (P1near_N);
+                    % \draw (P2far_P) to (P2near_P);
+                    % \draw (P2far_N) to (P2near_N);
+
+                    % \draw (P2near_N) to  (P2far_N) to [resistor={fill=white}] ++(up:1.6) to  (P2near_P) ;
+                    \draw (P2near_N) to  ++(right:2.5) to [resistor={circuit symbol size=width 3 height 2, fill=white, info=center:L}] ++(up:1.6) to  (P2near_P) ;
+
+                    
+                    \path (P1far_N) ++ (-0.5em,-1.2em) node[anchor=north, color=gray!50!black] (GammaIN){$\varGamma_{in}=0$};
+                    \draw[-{[sep=3pt]>}, >=stealth, inner sep=3pt, color=gray!50!black] ([color=gray!50!black]GammaIN.north) |- ++(0.8,1.2);
+
+                    \path (P2far_N) ++ (-2.8em,-1.2em) node[anchor=north, color=gray!50!black] (GammaIN){$\varGamma_L\neq0$};
+                    \draw[-{[sep=3pt]>}, >=stealth, inner sep=3pt, color=gray!50!black] ([color=gray!50!black]GammaIN.north) |- ++(0.8,1.2);
+
+                    \end{tikzpicture}                 
+            \end{center}
+            \vspace{-20pt}
+            \caption{无耗二端口网络用于阻抗匹配}\label{Fig: 无耗二端口网络用于阻抗匹配}
+        \end{wrapfigure} 
+        要使输入端口阻抗匹配，则
+        \begin{equation}
+            \varGamma_\mathrm{in}=S_{11}+\frac{S_{12}S_{21}\varGamma_L}{1-S_{22}\varGamma_L}=0
+        \end{equation}
+
+        用模值和辐角表示：
+        \begin{equation}
+            |S_{11}|\mathrm{e}^{\mathrm{j}\varphi_{11}}-|S_{11}||S_{22}|\mathrm{e}^{\mathrm{j}(\varphi_{11}+\varphi_{22})}\varGamma_L+|S_{12}||S_{21}|\mathrm{e}^{\mathrm{j}(\varphi_{12}+\varphi_{21})}\varGamma_L=0
+        \end{equation}
+
+        根据二端口网络的无耗性质 \hyperref[Equ: 无耗二端口网络的S参数]{式(\ref*{Equ: 无耗二端口网络的S参数})}，得到
+        \begin{equation}
+            |S_{11}|\mathrm{e}^{\mathrm{j}\varphi_{11}}+\varGamma_L\left(-|S_{11}|^2\mathrm{e}^{\mathrm{j}(\varphi_{12}+\varphi_{21})+\mathrm{j}\pi}+|S_{12}|^2\mathrm{e}^{\mathrm{j}(\varphi_{12}+\varphi_{21})}\right)=0
+        \end{equation}
+        带入无耗网络的振幅条件$|S_{11}|^2+|S_{12}|^2=1$，合并得
+        \begin{equation}
+            |S_{11}|\mathrm{e}^{\mathrm{j}\varphi_{11}}+|\varGamma_L|\mathrm{e}^{\mathrm{j}(\varphi_{12}+\varphi_{21})+\mathrm{j}\varphi_l}=0
+        \end{equation}
+        再用一次相位条件化简
+        \begin{equation}
+            |S_{11}|\mathrm{e}^{\mathrm{j}\varphi_{11}}=|\varGamma_L|\mathrm{e}^{\mathrm{j}(\varphi_{11}+\varphi_{22})+\mathrm{j}\varphi_l}
+        \end{equation}
+        即
+        \begin{equation}
+            |S_{11}|\mathrm{e}^{-\mathrm{j}\varphi_{22}}
+            =|S_{22}|\mathrm{e}^{-\mathrm{j}\varphi_{22}}
+            =S_{22}^*
+            =|\varGamma_L|\mathrm{e}^{\mathrm{j}\varphi_l}
+            =\varGamma_L
+        \end{equation}
+    \end{tcbproof}
+
+    % \begin{corollary}
+        
+    % \end{corollary}
+\section{单端口元件}
+    单端口元件常作为负载使用。它的S参数矩阵只有$S_{11}$一个元素。
+    \begin{equation}
+        b_1=S_{11}a_1
+    \end{equation}
+    此时，
+    \begin{equation}
+        \varGamma_{in}=\frac{b_1}{a_1}=S_{11}
+    \end{equation}
+    

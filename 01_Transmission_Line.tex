@@ -188,9 +188,9 @@
     \begin{equation}
         \varGamma(z')=\frac{u^-(z')}{u^+(z')}=\frac{u^-_l \mathrm{e}^{-\mathrm{j}\beta z'}}{u^+_l \mathrm{e}^{\mathrm{j}\beta z'}}=\varGamma_l \mathrm{e}^{-\mathrm{j}2\beta z'}\label{Equ: Reflection Coefficient at z'}
     \end{equation}
-    \begin{center}
-        $\varGamma(z'=l)$是否等于$\varGamma_g$？ ——  {\color{red} 否。它们是完全独立的}
-    \end{center}
+    % \begin{center}
+    %     $\varGamma(z'=l)$是否等于$\varGamma_g$？ ——  {\color{red} 否。它们是完全独立的}
+    % \end{center}
     其中$u^+_l$即将$z=l$代入章节\ref{Sec: Boundary conditions of lossless transmission lines}中的本征模电压表达式，但只取向$z+$方向（也即$z'-$方向）传播的分量；同理，$u^-_l$即负载处向$z-$方向（也即$z'$方向）的电压分量。{\color{gray}可以利用第三种边界条件来验证一下， $u^+_l,\, u^-_l$分别为：
     \begin{subequations}
         \begin{numcases}{}
@@ -201,8 +201,8 @@
     可见它们的确满足$u^-_l=\varGamma_l u^+_l$
     }
     \paragraph{电流反射系数：}
-    \begin{equation}
-        \varGamma_I(z')=\frac{i^-(z')}{i^+(z')}=\frac{i^-_l \mathrm{e}^{-\mathrm{j}\beta z'}}{i^+_l \mathrm{e}^{\mathrm{j}\beta z'}}{\color{red}\,=\frac{-u^-(z')/Z_0}{u^+(z')/Z_0}=-\varGamma(z')}\label{Equ: Reflection Coefficient of current at z'}
+    \begin{equation}\label{Equ: Reflection Coefficient of current at z'}
+        \varGamma_I(z')=\frac{i^-(z')}{i^+(z')}=\frac{i^-_l \mathrm{e}^{-\mathrm{j}\beta z'}}{i^+_l \mathrm{e}^{\mathrm{j}\beta z'}}{\color{red}\,=\frac{-u^-(z')/Z_0}{u^+(z')/Z_0}=-\varGamma(z')}
     \end{equation}
     \paragraph{使用前向电压电流和反射系数表示任意位置的电压电流：}（称$z+$方向为前向）
     ~\\[-15pt]
@@ -868,5 +868,5 @@
 
 
 
-最符合直觉的方法是利用任一点输入阻抗公式（\hyperref[Equ: 使用终端反射系数表示输入阻抗]{式(\ref*{Equ: 使用终端反射系数表示输入阻抗})}）直接求出输入阻抗，
+最直接的方法是利用任一点输入阻抗公式（\hyperref[Equ: 使用终端反射系数表示输入阻抗]{式(\ref*{Equ: 使用终端反射系数表示输入阻抗})}）求出输入阻抗。
 
